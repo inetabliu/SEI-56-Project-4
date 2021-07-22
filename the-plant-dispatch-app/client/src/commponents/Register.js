@@ -40,7 +40,7 @@ const Register = () => {
       history.push('/login')
       console.log(response.data)
     } catch (err) {
-      console.log(err.response.data.username)
+      console.log(err.response.data)
       
       
     }
