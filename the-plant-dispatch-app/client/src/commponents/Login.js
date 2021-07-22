@@ -1,25 +1,40 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
+import axios from 'axios'
 import { Form, Button } from 'react-bootstrap'
+import { useHistory } from 'react-router-dom'
 
 
 
 const Login = () => {
 
-  const [formData, setFormData] = useState({
+  const history = useHistory()
+
+  const [error, setError] = useState({
     email: '',
     password: '',
   })
 
+  const [formData, setFormData] = useState(false)
+
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value })
-    console.log(formData)
+    const newError = { ... error, [event.target.name]: event.target.response }
+    setError(newError)
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async event => {
     event.preventDefault()
-    console.log('submit button works')
+    try {
+      const { data } = await axios.post('api/auth/login/', formData)
+      history.push('/allplants')
+      
+    } catch (e) {
+      setError(e.response.data.detail)
+      console.log(e.response.data.detail) 
+    }
   }
+
 
   return (
 
@@ -32,7 +47,7 @@ const Login = () => {
           name="email"
           placeholder="Enter email" 
           value={formData.email}
-          onChange={handleChange}
+          onChange={handleChange}  
         />
         <Form.Text className="text-muted">
       Your email is save with us
