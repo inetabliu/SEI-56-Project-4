@@ -7,21 +7,49 @@ const Register = () => {
 
   const [formData, setFormData] = useState({
     username: '',
-    fullName: '',
+    full_name: '',
     email: '',
     password: '',
-    passwordConfirmation: '',
-    profileImage: '',
+    password_confirmation: '',
+    profile_image: '',
+  })
+
+  const [errors, setErrors] = useState({
+    username: '',
+    full_name: '',
+    email: '',
+    password: '',
+    password_confirmation: '',
+    profile_image: 'hfhhf',
   })
   
   const handleChange = event => {
-    setFormData({ ...formData, [event.target.name]: event.target.value })
-    console.log(formData)
+    const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value
+    console.log('my form data', formData)
+    setFormData({ ...formData, [event.target.name]: value })
+    const newErrors = { ...errors, [event.target.name]: '' }
+    setErrors(newErrors)
+  }
+
+  const handleSubmit = async event => {
+    event.preventDefault()
+    try {
+      await axios.post('/api/auth/register/', formData)
+    } catch (err) {
+      console.log(err)
+      
+      
+    }
+  }
+
+
+  const handleImageUrl = url => {
+    setFormData({ ... formData, profile_image: url })
   }
 
   return (
   
-    <form>
+    <form onSubmit={handleSubmit}>
 
       <div className="form-group">
         <label htmlFor="username">Username</label>
@@ -44,8 +72,8 @@ const Register = () => {
           className="form-control" 
           id="fullName" 
           placeholder="Enter your first name and surname"
-          value={formData.fullName}
-          name="fullName"
+          value={formData.full_name}
+          name="full_name"
           onChange={handleChange}
         />
       </div>
@@ -85,16 +113,22 @@ const Register = () => {
           className="form-control"
           id="passwordConfirmation"
           placeholder="Confirm Your Password"
-          name="passwordConfirmation"
-          value={formData.passwordConfirmation}
+          name="password_confirmation"
+          value={formData.password_confirmation}
           onChange={handleChange}
         />
       </div>
 
       <div className="form-group">
-        <ImageUploadField
-          name="profileImage"
+        <input  name="profile_image"
+          value={formData.profile_image}
+          onChange={handleChange}
         />
+        {/* <ImageUploadField
+          value={formData.profile_image}
+          name="profile_image"
+          onChange={handleChange}
+        /> */}
       </div>
 
       <button type="submit" className="btn btn-primary">Submit</button>

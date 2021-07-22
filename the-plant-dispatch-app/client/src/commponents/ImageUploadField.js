@@ -20,7 +20,7 @@ export const ImageUploadField = ({ handleImageUrl, value }) => {
     <>
       {value ?
         <div>
-          <img src={value} alt="plantImage"/>
+          <img src={value} alt="profileImage"/>
         </div>
         :
         <>
