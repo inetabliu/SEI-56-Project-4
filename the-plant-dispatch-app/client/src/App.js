@@ -1,17 +1,26 @@
-import React, { useEffect } from 'react'
-import axios from 'axios'
+/* eslint-disable no-unused-vars */
+import React from 'react'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import Register from './commponents/Register.js'
+
+
+
+
 
 const App = () => {
-  useEffect(() => {
-    const getData = async () => {
-      const res = await axios('/api/endpoint') // * <-- replace with your endpoint
-      const data = await res.json()
-      console.log(data)
-    }
-    getData()
-  })
 
-  return <h1>Hello World</h1>
+
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route path="/register" component={Register}/>
+      </Switch>
+    </BrowserRouter>
+ 
+  )
+  
+
+ 
 }
 
 export default App
