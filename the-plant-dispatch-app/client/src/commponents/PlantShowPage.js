@@ -5,7 +5,7 @@ import axios from 'axios'
 
 const PlantShowPage = () => {
 
-  const [plantShow, setPlantShow] = useState([])
+  const [plants, setPlantShow] = useState([])
 
   useEffect(() => {
     const getData = async () => {
@@ -17,7 +17,15 @@ const PlantShowPage = () => {
   }, [])
 
   return (
-    <p>Page where my plants live</p>
+    <div>
+      {plants.map( plant =>
+        <div key={plant.id}> 
+          <h1>{plant.plant_name}</h1>
+          <img src={plant.image}/>
+        </div>
+      )}
+    </div>
+
   )
 }
 
