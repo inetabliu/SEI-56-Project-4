@@ -2,9 +2,11 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { ImageUploadField } from './ImageUploadField'
+import { useHistory } from 'react-router-dom'
 
 const Register = () => {
 
+  const history = useHistory()
   const [formData, setFormData] = useState({
     username: '',
     full_name: '',
@@ -34,7 +36,9 @@ const Register = () => {
   const handleSubmit = async event => {
     event.preventDefault()
     try {
-      await axios.post('/api/auth/register/', formData)
+      const response = await axios.post('/api/auth/register/', formData)
+      history.push('/login')
+      console.log(response.data)
     } catch (err) {
       console.log(err)
       
