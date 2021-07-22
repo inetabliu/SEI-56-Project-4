@@ -1,0 +1,24 @@
+import React from 'react'
+import Navbar from 'react-bootstrap/Navbar'
+import { Container } from 'react-bootstrap'
+import { NavLink } from 'react-router-dom'
+
+
+const Navigation = () => {
+
+
+  return (
+    <Navbar bg="light">
+      <Container>
+        <Navbar.Brand href="/">Logo</Navbar.Brand>
+        <Navbar.Collapse className="justify-content-end">
+          <NavLink to="/register">Register</NavLink>
+          <NavLink to="/login">Login</NavLink>
+          <Navbar.Text>My Collection<a href="/allplants">here</a></Navbar.Text>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  )
+}
+
+export default Navigation
