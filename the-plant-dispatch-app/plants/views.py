@@ -11,7 +11,7 @@ class PlantListView(APIView):
 
     def get(self, _request):
         plants = Plant.objects.all()
-        serialized_plants = PopulatedPlantSerializer(plants, many=True)
+        serialized_plants = PlantSerializer(plants, many=True)
         return Response(serialized_plants.data, status=status.HTTP_200_OK)
     
 
@@ -48,3 +48,16 @@ class PlantDetailView(APIView):
             updated_plant.save()
             return Response(updated_plant.data, status=status.HTTP_202_ACCEPTED)
         return Response(updated_plant.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)       
+
+class PlantMaintenanceView(APIView):
+
+    def get_plant(self, pk):
+        try:
+            return Plant.objects.get(pk=pk)
+        except Plant.DoesNotExist:
+            raise NotFound(detail="Plant doesn not exist in the your collection")
+
+    def get(self, _request, pk):
+        plant = self.get_plant(pk=pk)
+        serialized_plant = PopulatedPlantSerializer(plant)
+        return Response(serialized_plant.data, status=status.HTTP_200_OK)

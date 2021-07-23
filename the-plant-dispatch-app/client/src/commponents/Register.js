@@ -54,8 +54,7 @@ const Register = () => {
   return (
   
     <form onSubmit={handleSubmit}>
-
-      <div className="form-group">
+      <div className="form-group row">
         <label htmlFor="username">Username</label>
         <input 
           type="text" 

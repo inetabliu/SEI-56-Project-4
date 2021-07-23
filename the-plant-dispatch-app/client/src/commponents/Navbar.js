@@ -14,6 +14,7 @@ const Navigation = () => {
         <Navbar.Collapse className="justify-content-end">
           <NavLink to="/register">Register</NavLink>
           <NavLink to="/login">Login</NavLink>
+          <NavLink to="/maintenance">Maintenance</NavLink>
           <Navbar.Text>My Collection<a href="/allplants">here</a></Navbar.Text>
         </Navbar.Collapse>
       </Container>
