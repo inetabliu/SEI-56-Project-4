@@ -8,4 +8,4 @@ class Plant(models.Model):
     origin = models.CharField(max_length=100)
 
     def __str__(self):
-        return f"{self.plant_name} - {self.genus}"
+        return f"{self.plant_name}"

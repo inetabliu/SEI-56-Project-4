@@ -4,13 +4,14 @@ from rest_framework import status
 from rest_framework.exceptions import NotFound
 
 from .models import Plant
-from .serializers import PlantSerializer
+from .serializers.common import PlantSerializer
+from .serializers.populated import PopulatedPlantSerializer
 
 class PlantListView(APIView):
 
     def get(self, _request):
         plants = Plant.objects.all()
-        serialized_plants = PlantSerializer(plants, many=True)
+        serialized_plants = PopulatedPlantSerializer(plants, many=True)
         return Response(serialized_plants.data, status=status.HTTP_200_OK)
     
 
