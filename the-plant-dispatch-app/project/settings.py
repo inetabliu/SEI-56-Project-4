@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'jwt_auth',
     'rest_framework',
-    'plants'
+    'plants',
+    'maintenance'
 ]
 
 MIDDLEWARE = [
