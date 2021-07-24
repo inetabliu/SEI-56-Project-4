@@ -38,7 +38,7 @@ const Login = () => {
 
   return (
 
-    <Form onSubmit={handleSubmit}>
+    <Form className="d-flex flex-column align-items-center" onSubmit={handleSubmit}>
 
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>

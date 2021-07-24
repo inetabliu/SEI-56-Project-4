@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
 import axios from 'axios'
-import { ImageUploadField } from './ImageUploadField'
 import { useHistory } from 'react-router-dom'
+import { ImageUploadField } from '../ImageUploadField.js'
 
 const Register = () => {
 
@@ -53,14 +53,14 @@ const Register = () => {
 
   return (
   
-    <form onSubmit={handleSubmit}>
-      <div className="form-group row">
+    <form className="d-flex flex-column align-items-center" onSubmit={handleSubmit}>
+      <div className="form-group">
         <label htmlFor="username">Username</label>
         <input 
           type="text" 
           className="form-control" 
           id="username" 
-          placeholder="Enter your username"
+          placeholder="Enter username"
           value={formData.username}
           name="username"
           onChange={handleChange}
@@ -74,7 +74,7 @@ const Register = () => {
           type="text" 
           className="form-control" 
           id="fullName" 
-          placeholder="Enter your first name and surname"
+          placeholder="Enter your full name"
           value={formData.full_name}
           name="full_name"
           onChange={handleChange}
@@ -123,15 +123,12 @@ const Register = () => {
       </div>
 
       <div className="form-group">
-        <input  name="profile_image"
+        <ImageUploadField
           value={formData.profile_image}
+          name="image"
           onChange={handleChange}
+          handleImageUrl={handleImageUrl}
         />
-        {/* <ImageUploadField
-          value={formData.profile_image}
-          name="profile_image"
-          onChange={handleChange}
-        /> */}
       </div>
 
       <button type="submit" className="btn btn-primary">Submit</button>

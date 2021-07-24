@@ -45,7 +45,7 @@ const PlantCreateForm = () => {
   
   return (
     <main className="section">
-      <form onSubmit={handleSubmit}>
+      <form className="d-flex flex-column align-items-center" onSubmit={handleSubmit}>
         <label className="label">Plant Name</label>
         <div className="control">
           <input
@@ -75,8 +75,9 @@ const PlantCreateForm = () => {
             onChange={handleChange}
           />
         </div>
+       
+        <label className="label">Genus</label>
         <div className="field">
-          <label className="label">Genus</label>
           <input
             className="input"
             name="genus"
@@ -84,8 +85,9 @@ const PlantCreateForm = () => {
             onChange={handleChange}
           />
         </div>
+       
+        <label className="label">Nursery Pot</label>
         <div className="field">
-          <label className="label">Nursery Pot</label>
           <input
             className="input"
             name="nursery_pot"
@@ -93,8 +95,9 @@ const PlantCreateForm = () => {
             onChange={handleChange}
           />
         </div>
+    
+        <label className="label">Origin</label>
         <div className="field">
-          <label className="label">Origin</label>
           <input
             className="input"
             name="origin"
@@ -118,7 +121,7 @@ const PlantCreateForm = () => {
           name="image"
           handleImageUrl={handleImageUrl}
         />
-        <button type="submit">Submit</button>
+        <button type="submit">Submit New Plant!</button>
       </form>
     </main>
 

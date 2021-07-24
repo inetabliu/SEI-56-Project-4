@@ -25,7 +25,7 @@ export const ImageUploadField = ({ handleImageUrl, value }) => {
         </div>
         :
         <>
-          <label>Profile Image</label>
+          <label>Image</label>
           <input
             className="input"
             type="file"

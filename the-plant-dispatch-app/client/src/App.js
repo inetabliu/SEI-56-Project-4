@@ -1,15 +1,13 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import Register from './commponents/Register.js'
-import Login from './commponents/Login.js'
+import Register from './commponents/auth/Register.js'
+import Login from './commponents/auth/Login.js'
 import PlantShowPage from './commponents/plants/PlantShowPage.js'
 import Navigation from './commponents/Navbar.js'
 import PlantMaintenance from './commponents/plants/PlantMaintenance.js'
 import Home from './commponents/Home.js'
 import PlantCreateForm from './commponents/plants/PlantCreateForm.js'
-
-
 
 
 
@@ -28,11 +26,7 @@ const App = () => {
         <Route eaxct path="/" component={Home}/>
       </Switch>
     </BrowserRouter>
- 
   )
-  
-
- 
 }
 
 export default App
