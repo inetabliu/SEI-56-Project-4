@@ -22,34 +22,35 @@ const PlantShowPage = () => {
 
 
   return (
-    
-    <div className="d-flex justify-content-around flex-wrap">
-      {plants.map(plant => 
-        <Card border="primary" className="bg-success bg-gradient" key={plant.id} style={{ width: '18rem' }}>
-          <Card.Title>{plant.plant_name}</Card.Title>
-          <Card.Body>
-            <Card.Img variant="top" src={plant.image} />
-            <Card.Text>
+    <>
+      <a href="/newplant">Add New Plant</a>
+      <div className="d-flex justify-content-around flex-wrap">
+        {plants.map(plant => 
+          <Card border="primary" className="bg-success bg-gradient" key={plant.id} style={{ width: '18rem' }}>
+            <Card.Title>{plant.plant_name}</Card.Title>
+            <Card.Body>
+              <Card.Img variant="top" src={plant.image} />
+              <Card.Text>
               Genus: {plant.genus}
-            </Card.Text>
-            <Card.Text>
+              </Card.Text>
+              <Card.Text>
               Origin: {plant.origin}
-            </Card.Text>
-            <Accordion >
-              <Accordion.Item eventKey="2">
-                <Accordion.Header className="">Care</Accordion.Header>
+              </Card.Text>
+              <Accordion >
+                <Accordion.Item eventKey="2">
+                  <Accordion.Header className="">Care</Accordion.Header>
                 
-                <Accordion.Body>
+                  <Accordion.Body>
             Here
-                </Accordion.Body>
+                  </Accordion.Body>
         
-              </Accordion.Item>
-            </Accordion>
-          </Card.Body>
-        </Card>
-      )}
-    </div>
-   
+                </Accordion.Item>
+              </Accordion>
+            </Card.Body>
+          </Card>
+        )}
+      </div>
+    </>
 
   )
 }

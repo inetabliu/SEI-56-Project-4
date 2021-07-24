@@ -6,23 +6,26 @@ import { useParams } from 'react-router-dom'
 const PlantMaintenance = () => {
   const [maintenance, setMaintenance] = useState([])
   const { id }  = useParams()
-  console.log(id)
+  
   
   
 
   useEffect(() => {
     const getData = async () => {
-      const { data } = await axios.get(`/api/plants/maintenance/${id}/`)
+      const { data } = await axios.get('/api/plants/maintenance/2/')
+      console.log(data.maintenance)
       setMaintenance(data.maintenance)
+      
     }
     getData()
   },[id] )
 
 
   return (
-    <div>
+    <div key={id}>
       {maintenance.map(el => 
         <>
+          <h1>{el.plant_name}</h1>
           <p key={el.id}>{el.task} - {el.carried_on}</p>
         </>
       )}
