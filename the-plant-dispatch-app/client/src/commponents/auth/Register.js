@@ -22,7 +22,7 @@ const Register = () => {
     email: '',
     password: '',
     password_confirmation: '',
-    profile_image: 'hfhhf',
+    profile_image: '',
   })
   
   const handleChange = event => {
@@ -40,8 +40,8 @@ const Register = () => {
       history.push('/login')
       console.log(response.data)
     } catch (err) {
-      console.log(err.response.data)
-      
+
+      setErrors(err.response.data)
       
     }
   }
@@ -52,89 +52,98 @@ const Register = () => {
   }
 
   return (
-  
-    <form className="d-flex flex-column align-items-center" onSubmit={handleSubmit}>
-      <div className="form-group">
-        <label htmlFor="username">Username</label>
-        <input 
-          type="text" 
-          className="form-control" 
-          id="username" 
-          placeholder="Enter username"
-          value={formData.username}
-          name="username"
-          onChange={handleChange}
-        />
-          
-      </div>
+    <>
+      
+      <form className="d-flex flex-column align-items-center" onSubmit={handleSubmit}>
+        <div className="text-center">
+          <h1>Register to catalogue your plant collection</h1>
+        </div>
+        <div className="form-group">
+          <label htmlFor="username">Username</label>
+          <input 
+            type="text" 
+            className="form-control" 
+            id="username" 
+            placeholder="Enter username"
+            value={formData.username}
+            name="username"
+            onChange={handleChange}
+          />
+          <small className="form-text text-muted">{errors.username}</small> 
+        </div>
 
-      <div className="form-group">
-        <label htmlFor="fullName">Full Name</label>
-        <input 
-          type="text" 
-          className="form-control" 
-          id="fullName" 
-          placeholder="Enter your full name"
-          value={formData.full_name}
-          name="full_name"
-          onChange={handleChange}
-        />
-      </div>
+        <div className="form-group">
+          <label htmlFor="fullName">Full Name</label>
+          <input 
+            type="text" 
+            className="form-control" 
+            id="fullName" 
+            placeholder="Enter your full name"
+            value={formData.full_name}
+            name="full_name"
+            onChange={handleChange}
+          />
+          <small className="form-text text-muted">{errors.full_name}</small> 
+        </div>
 
-      <div className="form-group">
-        <label htmlFor="emailAddress">Email address</label>
-        <input 
-          type="email"
-          className="form-control"
-          id="email"
-          aria-describedby="emailHelp"
-          placeholder="Enter your email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-        />
-        <small id="emailHelp" className="form-text text-muted">Your email is secure with us.</small>
-      </div>
+        <div className="form-group">
+          <label htmlFor="emailAddress">Email address</label>
+          <input 
+            type="email"
+            className="form-control"
+            id="email"
+            aria-describedby="emailHelp"
+            placeholder="Enter your email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+          />
+          <small id="emailHelp" className="form-text text-muted">Your email is secure with us.</small>
+          <p>{errors.email}</p> 
+        </div>
 
-      <div className="form-group">
-        <label htmlFor="exampleInputPassword1">Password</label>
-        <input 
-          type="password" 
-          className="form-control" 
-          id="exampleInputPassword1"
-          placeholder="Enter Your Password"
-          name="password"
-          value={formData.password}
-          onChange={handleChange}
-        />
-      </div>
+        <div className="form-group">
+          <label htmlFor="exampleInputPassword1">Password</label>
+          <input 
+            type="password" 
+            className="form-control" 
+            id="exampleInputPassword1"
+            placeholder="Enter Your Password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+          />
+          <small className="form-text text-muted">{errors.password}</small> 
+        </div>
 
-      <div className="form-group">
-        <label htmlFor="passwordCofnirmation">Password Confirmation</label>
-        <input 
-          type="password"
-          className="form-control"
-          id="passwordConfirmation"
-          placeholder="Confirm Your Password"
-          name="password_confirmation"
-          value={formData.password_confirmation}
-          onChange={handleChange}
-        />
-      </div>
+        <div className="form-group">
+          <label htmlFor="passwordCofnirmation">Password Confirmation</label>
+          <input 
+            type="password"
+            className="form-control"
+            id="passwordConfirmation"
+            placeholder="Confirm Your Password"
+            name="password_confirmation"
+            value={formData.password_confirmation}
+            onChange={handleChange}
+          />
+          <small className="form-text text-muted">{errors.password_confirmation}</small> 
+        </div>
 
-      <div className="form-group">
-        <ImageUploadField
-          value={formData.profile_image}
-          name="image"
-          onChange={handleChange}
-          handleImageUrl={handleImageUrl}
-        />
-      </div>
+        <div className="form-group">
+          <ImageUploadField
+            value={formData.profile_image}
+            name="image"
+            onChange={handleChange}
+            handleImageUrl={handleImageUrl}
+          />
+          <small className="form-text text-muted">{errors.profile_image}</small> 
+        </div>
 
-      <button type="submit" className="btn btn-primary">Submit</button>
+        <button type="submit" className="btn btn-primary">Submit</button>
 
-    </form>
-
+      </form>
+    </>
   )
 }
 

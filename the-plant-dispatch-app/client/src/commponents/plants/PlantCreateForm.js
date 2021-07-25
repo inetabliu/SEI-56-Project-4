@@ -45,6 +45,11 @@ const PlantCreateForm = () => {
   
   return (
     <main className="section">
+      <div className="text-center">
+        <h1>Got another plant again?</h1>
+        <p>Add it to your collection</p>
+      </div>
+    
       <form className="d-flex flex-column align-items-center" onSubmit={handleSubmit}>
         <label className="label">Plant Name</label>
         <div className="control">

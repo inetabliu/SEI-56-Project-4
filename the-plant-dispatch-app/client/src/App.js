@@ -5,9 +5,10 @@ import Register from './commponents/auth/Register.js'
 import Login from './commponents/auth/Login.js'
 import PlantShowPage from './commponents/plants/PlantShowPage.js'
 import Navigation from './commponents/Navbar.js'
-import PlantMaintenance from './commponents/plants/PlantMaintenance.js'
+import PlantMaintenance from './commponents/plants/PlantwithMaintenance.js'
 import Home from './commponents/Home.js'
 import PlantCreateForm from './commponents/plants/PlantCreateForm.js'
+import Maintenance from './commponents/maintenance/Maintenance.js'
 
 
 
@@ -19,7 +20,8 @@ const App = () => {
       <Navigation />
       <Switch>
         <Route path="/newplant" component={PlantCreateForm}/>
-        <Route path="/maintenance" component={PlantMaintenance}/>
+        <Route path="/maintenance/:id" component={PlantMaintenance}/>
+        <Route path="/maintenance" component={Maintenance}/>
         <Route path="/allplants" component={PlantShowPage}/>
         <Route path="/login" component={Login}/>
         <Route path="/register" component={Register}/>

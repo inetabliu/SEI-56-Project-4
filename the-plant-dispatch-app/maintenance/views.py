@@ -16,6 +16,7 @@ class MaintenanceListView(APIView):
         if record_to_create.is_valid():
             record_to_create.save()
             return Response(record_to_create.data, status=status.HTTP_201_CREATED)
+            print(record_to_create)
         return Response(record_to_create.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
         
 

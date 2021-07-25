@@ -29,7 +29,7 @@ class PlantDetailView(APIView):
         try:
             return Plant.objects.get(pk=pk)
         except Plant.DoesNotExist:
-            raise NotFound(detail="Plant doesn not exist in the your collection")  
+            raise NotFound(detail="Plant does not exist in the your collection")  
 
     def get(self, _request, pk):
         plant = self.get_plant(pk=pk)
