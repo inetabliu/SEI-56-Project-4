@@ -39,6 +39,7 @@ class PlantDetailView(APIView):
     def delete(self, _request, pk):
         plant_to_delete = self.get_plant(pk=pk)
         plant_to_delete.delete()
+        print("my plant to delete", plant_to_delete)
         return Response(status=status.HTTP_204_NO_CONTENT)
 
     def put(self, request, pk):

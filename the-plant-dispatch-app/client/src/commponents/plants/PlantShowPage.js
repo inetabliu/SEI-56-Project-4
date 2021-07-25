@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Card from 'react-bootstrap/Card'
 import Accordion from 'react-bootstrap/Accordion'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 
 
@@ -11,7 +11,7 @@ import { Button } from 'react-bootstrap'
 const PlantShowPage = () => {
 
   const [plants, setPlantShow] = useState([])
-  
+  const { id } = useParams()
   useEffect(() => {
     const getData = async () => {
       const { data } = await axios.get('/api/plants/')
@@ -20,6 +20,7 @@ const PlantShowPage = () => {
     }
     getData()
   },[] )
+
 
 
 

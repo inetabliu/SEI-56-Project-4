@@ -1,25 +1,39 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { useParams } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
+import { Button } from 'react-bootstrap'
 
 const PlantMaintenance = () => {
   const [maintenance, setMaintenance] = useState([])
   const [plant, setPlant] = useState([])
   const { id }  = useParams()
-
+  const history = useHistory()
+  console.log('plant id', id)
   
   
-
+  // GET ALL PLANT DATA
   useEffect(() => {
     const getData = async () => {
       const { data } = await axios.get(`/api/plants/maintenance/${id}/`)
-      console.log(data)
       setPlant(data)
-      setMaintenance(data.maintenance) 
+      
     }
     getData()
   },[id] )
+
+  // DELETE PLANT
+
+  const handleDelete = async () => {
+    try {
+      const { data } =  await axios.delete(`/api/plants/${id}/`)
+      window.confirm('You sure You want to delete the plant?')
+      setPlant(data)
+      history.push('/allplants')
+    } catch (err) {
+      console.log(err)
+    }
+  }
 
 
   return (
@@ -43,6 +57,7 @@ const PlantMaintenance = () => {
           </>
         )}
       </div>
+      <Button onClick={handleDelete}>Delete</Button>
     </>
   )
 }
