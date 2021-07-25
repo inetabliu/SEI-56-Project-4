@@ -12,6 +12,7 @@ export const ImageUploadField = ({ handleImageUrl, value }) => {
     data.append('upload_preset', uploadPreset)
     const res = await axios.post(uploadUrl, data)
     handleImageUrl(res.data.url)
+    console.log(res.data.url)
   }
 
 
@@ -20,11 +21,11 @@ export const ImageUploadField = ({ handleImageUrl, value }) => {
     <>
       {value ?
         <div>
-          <img src={value} alt="profileImage"/>
+          <img height="auto"  width="400px" src={value} alt="image"/>
         </div>
         :
         <>
-          <label>Profile Image</label>
+          <label>Image</label>
           <input
             className="input"
             type="file"

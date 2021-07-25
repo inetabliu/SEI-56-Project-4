@@ -4,7 +4,8 @@ from rest_framework import status
 from rest_framework.exceptions import NotFound
 
 from .models import Plant
-from .serializers import PlantSerializer
+from .serializers.common import PlantSerializer
+from .serializers.populated import PopulatedPlantSerializer
 
 class PlantListView(APIView):
 
@@ -28,7 +29,7 @@ class PlantDetailView(APIView):
         try:
             return Plant.objects.get(pk=pk)
         except Plant.DoesNotExist:
-            raise NotFound(detail="Plant doesn not exist in the your collection")  
+            raise NotFound(detail="Plant does not exist in the your collection")  
 
     def get(self, _request, pk):
         plant = self.get_plant(pk=pk)
@@ -47,3 +48,16 @@ class PlantDetailView(APIView):
             updated_plant.save()
             return Response(updated_plant.data, status=status.HTTP_202_ACCEPTED)
         return Response(updated_plant.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)       
+
+class PlantMaintenanceView(APIView):
+
+    def get_plant(self, pk):
+        try:
+            return Plant.objects.get(pk=pk)
+        except Plant.DoesNotExist:
+            raise NotFound(detail="Plant doesn not exist in the your collection")
+
+    def get(self, _request, pk):
+        plant = self.get_plant(pk=pk)
+        serialized_plant = PopulatedPlantSerializer(plant)
+        return Response(serialized_plant.data, status=status.HTTP_200_OK)

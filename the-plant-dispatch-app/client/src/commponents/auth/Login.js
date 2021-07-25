@@ -38,8 +38,10 @@ const Login = () => {
 
   return (
 
-    <Form onSubmit={handleSubmit}>
-
+    <Form className="d-flex flex-column align-items-center" onSubmit={handleSubmit}>
+      <div className="text-center">
+        <h1>Login to view your collection</h1>
+      </div>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
         <Form.Control 
@@ -57,6 +59,7 @@ const Login = () => {
       <Form.Group className="mb-3" controlId="formPassword">
         <Form.Label>Password</Form.Label>
         <Form.Control 
+          size="sm"
           name="password"
           type="password" 
           placeholder="Password" 
