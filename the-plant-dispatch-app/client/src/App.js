@@ -9,6 +9,7 @@ import PlantMaintenance from './commponents/plants/PlantwithMaintenance.js'
 import Home from './commponents/Home.js'
 import PlantCreateForm from './commponents/plants/PlantCreateForm.js'
 import Maintenance from './commponents/maintenance/Maintenance.js'
+import PlantEdit from './commponents/plants/PlantEdit.js'
 
 
 
@@ -19,6 +20,7 @@ const App = () => {
     <BrowserRouter>
       <Navigation />
       <Switch>
+        <Route path="/plantedit/:id" component={PlantEdit}/>
         <Route path="/newplant" component={PlantCreateForm}/>
         <Route path="/maintenance/:id" component={PlantMaintenance}/>
         <Route path="/maintenance" component={Maintenance}/>

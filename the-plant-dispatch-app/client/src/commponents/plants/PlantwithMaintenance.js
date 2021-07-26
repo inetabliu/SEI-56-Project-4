@@ -1,25 +1,42 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { useParams } from 'react-router-dom'
+import { useParams, useHistory, Link } from 'react-router-dom'
+import { Button } from 'react-bootstrap'
+import { Modal } from 'react-bootstrap'
+import DeleteModal from '../Popups/DeleteModal.js'
+
 
 const PlantMaintenance = () => {
   const [maintenance, setMaintenance] = useState([])
   const [plant, setPlant] = useState([])
   const { id }  = useParams()
-
+  const history = useHistory()
+  console.log('plant id', id)
   
   
-
+  // GET ALL PLANT DATA
   useEffect(() => {
     const getData = async () => {
       const { data } = await axios.get(`/api/plants/maintenance/${id}/`)
-      console.log(data)
       setPlant(data)
-      setMaintenance(data.maintenance) 
+      setMaintenance(data.maintenance)
     }
     getData()
   },[id] )
+
+  // DELETE PLANT
+  const handleDelete = async () => {
+    try {
+      const { data } =  await axios.delete(`/api/plants/${id}/`)
+      setPlant(data)
+      history.push('/allplants')
+    } catch (err) {
+      console.log(err)
+    }
+  }
+  
+  
 
 
   return (
@@ -43,6 +60,8 @@ const PlantMaintenance = () => {
           </>
         )}
       </div>
+      <Button variant="warning"><Link to={`/plantedit/${plant.id}`}>Edit</Link></Button> 
+      <DeleteModal handleDelete={handleDelete}/>
     </>
   )
 }
