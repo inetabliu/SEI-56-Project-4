@@ -4,6 +4,7 @@ import PlantForm from './PlantForm.js'
 import React, { useState, useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 import axios from 'axios'
+import UpdateToast from '../Popups/UpdateToast.js'
 
 const PlantEdit = () => {
   const { id } = useParams()
@@ -19,6 +20,7 @@ const PlantEdit = () => {
     image: '',
   })
 
+  
   useEffect(() => {
     const getData = async () => {
       const { data } = await axios.get(`/api/plants/${id}`)
@@ -45,12 +47,14 @@ const PlantEdit = () => {
   }
  
   return (
-    <PlantForm
-      formdata={formData}
-      handleChange={handleChange}
-      buttonText="Submit changes"
-      handleSubmit={handleSubmit}
-    />
+    <>
+      <PlantForm
+        formdata={formData}
+        handleChange={handleChange}
+        buttonText="Submit changes"
+        handleSubmit={handleSubmit}
+      />
+    </>
   )
 }
 

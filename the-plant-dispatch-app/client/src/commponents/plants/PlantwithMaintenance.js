@@ -4,7 +4,7 @@ import axios from 'axios'
 import { useParams, useHistory, Link } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 import { Modal } from 'react-bootstrap'
-import DeleteModal from '../Modals/DeleteModal.js'
+import DeleteModal from '../Popups/DeleteModal.js'
 
 
 const PlantMaintenance = () => {
