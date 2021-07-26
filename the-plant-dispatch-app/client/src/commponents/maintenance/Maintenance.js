@@ -1,21 +1,72 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Form, Col, Row } from 'react-bootstrap'
+import { Form, Button } from 'react-bootstrap'
 
+  
 const Maintenance = () => {
-  const [ formData, setFormData] = useState({
+  const [formData, setFormData] = useState({
     task: '',
     carried_on: '',
+    plant: '',
   })
 
-  const handleChange = (event) => {
-    console.log('its changing')
-  }
-  
-  return (
+  const [plantData, setPlantData] = useState([])
+
+  const values = ['WATERRED ON', 'REPOTTED ON', 'FERTILIZED ON']
+
+  useEffect(() => {
+    const getData = async () => {
+      const { data } = await axios.get('/api/plants/')
+      setPlantData(data)
+      console.log(data)
+    }
    
+    getData()
+  },[])
+
+  const handleChange = (event) => {
+    const updatedForm = { ...formData, [event.target.name]: event.target.value }
+    setFormData(updatedForm)
+    console.log(formData)
+  }
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    try {
+      await axios.post('/api/maintenance/', formData)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  return (
+    <>
+      <Form onSubmit={handleSubmit}>
+        <label>Pick a date</label>
+        <input 
+          name="carried_on"
+          type="date" 
+          value={formData.carried_on}
+          onChange={handleChange}
+        />
+        <Form.Select name="plant" aria-label="Floating label select example" onChange={handleChange}>
+          {plantData.map(plant =>
+            <option key={plant.key} value={plant.id}>{plant.plant_name}</option>
+          )}
+        </Form.Select>
+
+        <Form.Select name="task" aria-label="Floating label select example" onChange={handleChange}>
+          {values.map(task =>
+            <option key={task.key} value={formData.value}>{task}</option>
+          )}
+        </Form.Select>
+        <Button type="submit">Add record</Button>
+      </Form>
+    </>
   )
 }
+  
+
 
 export default Maintenance

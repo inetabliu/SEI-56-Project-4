@@ -6,6 +6,7 @@ from rest_framework.exceptions import NotFound
 from .models import Plant
 from .serializers.common import PlantSerializer
 from .serializers.populated import PopulatedPlantSerializer
+from maintenance.serializers.common import MaintenanceSerializer
 
 class PlantListView(APIView):
 
@@ -62,3 +63,5 @@ class PlantMaintenanceView(APIView):
         plant = self.get_plant(pk=pk)
         serialized_plant = PopulatedPlantSerializer(plant)
         return Response(serialized_plant.data, status=status.HTTP_200_OK)
+
+    
