@@ -28,14 +28,28 @@ const PlantEdit = () => {
     getData()
   }, [id])
 
-  const handleChange = () => {
-    console.log('change is happenign')
+  const handleChange = (event) => {
+    const updatedFormData = { ... formData, [event.target.name]: event.target.value }
+    SetFormData(updatedFormData)
+    console.log(formData)
+  }
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    try {
+      await axios.put(`/api/plants/${id}/`, formData)
+      history.push(`/maintenance/${id}`)
+    } catch (err) {
+      console.log(err)
+    }
   }
  
   return (
     <PlantForm
       formdata={formData}
       handleChange={handleChange}
+      buttonText="Submit changes"
+      handleSubmit={handleSubmit}
     />
   )
 }

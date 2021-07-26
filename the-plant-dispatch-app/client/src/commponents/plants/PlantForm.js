@@ -3,7 +3,7 @@ import { Form, Button } from 'react-bootstrap'
 import { ImageUploadField } from '../ImageUploadField.js'
 
 
-const PlantForm = ({ formdata, handleSubmit, handleChange, handleImageUrl }) => {
+const PlantForm = ({ formdata, handleSubmit, handleChange, handleImageUrl, buttonText = 'Submit' }) => {
 
   return (
     <Form className="d-flex flex-column align-items-center" onSubmit={handleSubmit}>
@@ -83,7 +83,7 @@ const PlantForm = ({ formdata, handleSubmit, handleChange, handleImageUrl }) => 
         name="image"
         handleImageUrl={handleImageUrl}
       />
-      <Button type="submit">Submit New Plant!</Button>
+      <Button type="submit">{buttonText}</Button>
     </Form>
   )
 }
