@@ -23,13 +23,19 @@ const PlantEdit = () => {
     const getData = async () => {
       const { data } = await axios.get(`/api/plants/${id}`)
       console.log(data)
+      SetFormData(data)
     }
     getData()
   }, [id])
+
+  const handleChange = () => {
+    console.log('change is happenign')
+  }
  
   return (
     <PlantForm
       formdata={formData}
+      handleChange={handleChange}
     />
   )
 }
