@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { useParams, useHistory } from 'react-router-dom'
+import { useParams, useHistory, Link } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 import { Modal } from 'react-bootstrap'
 import DeleteModal from '../Modals/DeleteModal.js'
@@ -60,7 +60,7 @@ const PlantMaintenance = () => {
           </>
         )}
       </div>
-  
+      <Button variant="warning"><Link to={`/plantedit/${plant.id}`}>Edit</Link></Button> 
       <DeleteModal handleDelete={handleDelete}/>
     </>
   )
