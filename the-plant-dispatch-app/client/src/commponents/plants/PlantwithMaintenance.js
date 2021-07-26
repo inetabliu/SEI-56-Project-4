@@ -3,6 +3,9 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams, useHistory } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
+import { Modal } from 'react-bootstrap'
+import DeleteModal from '../Modals/DeleteModal.js'
+
 
 const PlantMaintenance = () => {
   const [maintenance, setMaintenance] = useState([])
@@ -17,23 +20,23 @@ const PlantMaintenance = () => {
     const getData = async () => {
       const { data } = await axios.get(`/api/plants/maintenance/${id}/`)
       setPlant(data)
-      
+      setMaintenance(data.maintenance)
     }
     getData()
   },[id] )
 
   // DELETE PLANT
-
   const handleDelete = async () => {
     try {
       const { data } =  await axios.delete(`/api/plants/${id}/`)
-      window.confirm('You sure You want to delete the plant?')
       setPlant(data)
       history.push('/allplants')
     } catch (err) {
       console.log(err)
     }
   }
+  
+  
 
 
   return (
@@ -57,7 +60,8 @@ const PlantMaintenance = () => {
           </>
         )}
       </div>
-      <Button onClick={handleDelete}>Delete</Button>
+  
+      <DeleteModal handleDelete={handleDelete}/>
     </>
   )
 }
