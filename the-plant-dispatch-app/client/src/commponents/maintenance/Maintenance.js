@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Form, Button } from 'react-bootstrap'
+import { useHistory, useParams } from 'react-router-dom'
 
   
 const Maintenance = () => {
@@ -11,9 +12,10 @@ const Maintenance = () => {
     plant: '',
   })
 
+  const history = useHistory()
+  const { id } = useParams()
   const [plantData, setPlantData] = useState([])
-
-  const values = ['WATERRED ON', 'REPOTTED ON', 'FERTILIZED ON']
+  const values = ['WATERRED ON', 'REPOTTED ON', 'FERTILIZED ON', 'PEST TREATMENT']
 
   useEffect(() => {
     const getData = async () => {
@@ -21,7 +23,6 @@ const Maintenance = () => {
       setPlantData(data)
       console.log(data)
     }
-   
     getData()
   },[])
 
@@ -35,6 +36,7 @@ const Maintenance = () => {
     event.preventDefault()
     try {
       await axios.post('/api/maintenance/', formData)
+      history.push('/allplants')
     } catch (err) {
       console.log(err)
     }
