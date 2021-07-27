@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { useHistory } from 'react-router-dom'
 import PlantForm from './PlantForm.js'
-
+import { getTokenFromLocalStorage } from '../helpers/auth.js'
 
 
 const PlantCreateForm = () => {
@@ -48,7 +48,11 @@ const PlantCreateForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
-      const res = await axios.post('/api/plants/', formdata)
+      const res = await axios.post('/api/plants/', formdata, 
+        {
+          headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` },
+        }
+      )
       history.push('/allplants')
     } catch (err) {
       setErrors(err.response.data)

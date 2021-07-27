@@ -6,6 +6,7 @@ import { useHistory } from 'react-router-dom'
 
 
 
+
 const Login = () => {
 
   const history = useHistory()
@@ -23,10 +24,16 @@ const Login = () => {
     setError(newError)
   }
 
+  const setTokenToLocalStorage = (token) => {
+    window.localStorage.setItem('token', token)
+
+  }
+
   const handleSubmit = async event => {
     event.preventDefault()
     try {
       const { data } = await axios.post('api/auth/login/', formData)
+      setTokenToLocalStorage(data.token)
       history.push('/allplants')
       
     } catch (e) {

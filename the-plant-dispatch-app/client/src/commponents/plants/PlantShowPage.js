@@ -6,6 +6,7 @@ import Accordion from 'react-bootstrap/Accordion'
 import { Link, useParams } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 import { Row } from 'react-bootstrap'
+import { getTokenFromLocalStorage } from '../helpers/auth.js'
 
 
 
@@ -15,7 +16,9 @@ const PlantShowPage = () => {
   const { id } = useParams()
   useEffect(() => {
     const getData = async () => {
-      const { data } = await axios.get('/api/plants/')
+      const { data } = await axios.get('/api/plants/', {
+        headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` },
+      })
       setPlantShow(data)
       console.log(data)
     }

@@ -2,6 +2,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.exceptions import NotFound
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
+
 
 from .models import Plant
 from .serializers.common import PlantSerializer
@@ -9,9 +11,10 @@ from .serializers.populated import PopulatedPlantSerializer
 from maintenance.serializers.common import MaintenanceSerializer
 
 class PlantListView(APIView):
+    permission_classes = (IsAuthenticatedOrReadOnly, )
 
-    def get(self, _request):
-        plants = Plant.objects.all()
+    def get(self, request):
+        plants = Plant.objects.filter(owner=request.user.id)
         serialized_plants = PlantSerializer(plants, many=True)
         return Response(serialized_plants.data, status=status.HTTP_200_OK)
     
@@ -25,6 +28,7 @@ class PlantListView(APIView):
 
 
 class PlantDetailView(APIView):
+    permission_classes = (IsAuthenticatedOrReadOnly, )
 
     def get_plant(self, pk):
         try:
@@ -52,6 +56,7 @@ class PlantDetailView(APIView):
         return Response(updated_plant.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)       
 
 class PlantMaintenanceView(APIView):
+    permission_classes = (IsAuthenticatedOrReadOnly, )
 
     def get_plant(self, pk):
         try:
@@ -63,5 +68,3 @@ class PlantMaintenanceView(APIView):
         plant = self.get_plant(pk=pk)
         serialized_plant = PopulatedPlantSerializer(plant)
         return Response(serialized_plant.data, status=status.HTTP_200_OK)
-
-    
