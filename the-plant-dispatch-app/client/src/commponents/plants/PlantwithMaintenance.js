@@ -43,7 +43,7 @@ const PlantMaintenance = () => {
     <>
       <div key={plant.plant_name}>
         <h2>{plant.plant_name}</h2>
-        <img src={plant.image} className="img-thumbnail figure-img img-fluid rounded float-start" alt="..."/>
+        <img height="auto"  width="400px" src={plant.image} className="img-thumbnail figure-img img-fluid rounded float-start" alt="..."/>
         <p>{plant.botanical_name}</p>
         <p>{plant.nickname}</p>
         <p>{plant.origin}</p>

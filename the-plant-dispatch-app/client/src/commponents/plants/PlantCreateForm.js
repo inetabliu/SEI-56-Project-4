@@ -52,7 +52,7 @@ const PlantCreateForm = () => {
       history.push('/allplants')
     } catch (err) {
       setErrors(err.response.data)
-      console.log(err.response.data.genus[0])
+      console.log(err.response.data)
     }
   }
 

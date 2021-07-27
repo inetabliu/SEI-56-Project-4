@@ -1,70 +1,74 @@
 /* eslint-disable no-unused-vars */
-import React, { useState, Component } from 'react'
-import Calendar, { YearView } from 'react-calendar'
-import { Form } from 'react-bootstrap'
-import Select from 'react-select'
-import { Button } from 'react-bootstrap'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-// import 'bootstrap/dist/css/bootstrap.min.css'
+import { Form, Button } from 'react-bootstrap'
+import { useHistory, useParams } from 'react-router-dom'
 
-
+  
 const Maintenance = () => {
-  const [value, onChange] = useState(new Date())
-  console.log(value)
-  const formatedDate = value.toISOString()
-  console.log(formatedDate)
- 
   const [formData, setFormData] = useState({
     task: '',
     carried_on: '',
+    plant: '',
   })
-  const handleMultiChange = (selected, name) => {
-    const values = selected ? selected.map(item => item.value) : []
-    setFormData({ ...formData, [name]: [ ...values] })
-    console.log(values)
+
+  const history = useHistory()
+  const { id } = useParams()
+  const [plantData, setPlantData] = useState([])
+  const values = ['WATERRED ON', 'REPOTTED ON', 'FERTILIZED ON', 'PEST TREATMENT']
+
+  useEffect(() => {
+    const getData = async () => {
+      const { data } = await axios.get('/api/plants/')
+      setPlantData(data)
+      console.log(data)
+    }
+    getData()
+  },[])
+
+  const handleChange = (event) => {
+    const updatedForm = { ...formData, [event.target.name]: event.target.value }
+    setFormData(updatedForm)
+    console.log(formData)
   }
- 
-  
-  const options = [
-    { value: 'WATERED ON', label: 'Watered' },
-    { value: 'FERTILIZED ON', label: 'Fertilized' },
-    { value: 'REPOTTED ON', label: 'Repotted' }
-  ]
 
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
-      const res = await axios.post('/api/maintenance/')
+      await axios.post('/api/maintenance/', formData)
+      history.push('/allplants')
     } catch (err) {
-      console.log(err.response)
+      console.log(err)
     }
   }
-  const handleChange = (event) => {
-    const newFormData = { ...formData, [event.target.name]: event.target.value }
-    setFormData(newFormData)
-    console.log('with date', newFormData)
-  }
-  
-  
+
   return (
     <>
-      <div className="container">
-        <Form onSubmit={handleSubmit}>
-          <h2>Maintenance calendar</h2>
-          <div className="text-center">
-            <Calendar
-              onChange={onChange}
-              value={value}
-              minDetail='month'
-            />
-          </div>
-          <input name="carried_on" value={formData.carried_on}onChange={handleChange}/>
-          <Select  name="task" isMulti options={options} onChange={handleMultiChange}/>
-          <Button type="submit">Submit</Button>
-        </Form>
-      </div>
+      <Form onSubmit={handleSubmit}>
+        <label>Pick a date</label>
+        <input 
+          name="carried_on"
+          type="date" 
+          value={formData.carried_on}
+          onChange={handleChange}
+        />
+        <Form.Select name="plant" aria-label="Floating label select example" onChange={handleChange}>
+          {plantData.map(plant =>
+            <option key={plant.key} value={plant.id}>{plant.plant_name}</option>
+          )}
+        </Form.Select>
+
+        <Form.Select name="task" aria-label="Floating label select example" onChange={handleChange}>
+          {values.map(task =>
+            <option key={task.key} value={formData.value}>{task}</option>
+          )}
+        </Form.Select>
+        <Button type="submit">Add record</Button>
+      </Form>
     </>
   )
 }
+  
+
 
 export default Maintenance
