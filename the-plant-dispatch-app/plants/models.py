@@ -10,6 +10,11 @@ class Plant(models.Model):
     image = models.CharField(max_length=100, default="https://res.cloudinary.com/inetab/image/upload/c_scale,h_400,w_600/v1627030331/SEI_Project_4/sblkzvbotq3ndadygtsy.jpg")
     origin = models.CharField(max_length=100)
     description = models.TextField(max_length=300, null=True, blank=True)
+    owner = models.ForeignKey(
+          "jwt_auth.User",
+          related_name="plants",
+          on_delete=models.CASCADE
+    )
 
     def __str__(self):
         return f"{self.plant_name}"

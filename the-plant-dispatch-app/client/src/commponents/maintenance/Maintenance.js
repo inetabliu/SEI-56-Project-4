@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Form, Button } from 'react-bootstrap'
 import { useHistory, useParams } from 'react-router-dom'
+import { getTokenFromLocalStorage } from '../helpers/auth.js'
 
   
 const Maintenance = () => {
@@ -19,7 +20,9 @@ const Maintenance = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const { data } = await axios.get('/api/plants/')
+      const { data } = await axios.get('/api/plants/', {
+        headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` },
+      })
       setPlantData(data)
       console.log(data)
     }

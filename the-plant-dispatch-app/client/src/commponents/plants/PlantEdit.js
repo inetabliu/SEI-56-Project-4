@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 import axios from 'axios'
 import UpdateToast from '../Popups/UpdateToast.js'
+import { getTokenFromLocalStorage } from '../helpers/auth.js'
 
 const PlantEdit = () => {
   const { id } = useParams()
@@ -23,7 +24,9 @@ const PlantEdit = () => {
   
   useEffect(() => {
     const getData = async () => {
-      const { data } = await axios.get(`/api/plants/${id}`)
+      const { data } = await axios.get(`/api/plants/${id}`, {
+        headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` },
+      })
       console.log(data)
       SetFormData(data)
     }
@@ -42,7 +45,7 @@ const PlantEdit = () => {
       await axios.put(`/api/plants/${id}/`, formData)
       history.push(`/maintenance/${id}`)
     } catch (err) {
-      console.log(err)
+      console.log(err.response.data)
     }
   }
  
