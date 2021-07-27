@@ -47,7 +47,7 @@ const Navigation = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           {userIsAuthenticated() &&
-          <Nav>
+          <Nav className="me-auto">
             <Nav.Link href="/maintenance">Maintenance</Nav.Link>
             <Nav.Link href="/allplants"eventKey={2}> My collection
             </Nav.Link>

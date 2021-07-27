@@ -55,7 +55,7 @@ const PlantCreateForm = () => {
       )
       history.push('/allplants')
     } catch (err) {
-      setErrors(err.response.data)
+
       console.log(err.response.data)
     }
   }
@@ -76,7 +76,8 @@ const PlantCreateForm = () => {
         formdata={formdata}
         handleChange={handleChange}
         handleImageUrl={handleImageUrl}
-        handleSubmit={handleSubmit}/>
+        handleSubmit={handleSubmit}
+        errors={errors}/>
     </>
 
 

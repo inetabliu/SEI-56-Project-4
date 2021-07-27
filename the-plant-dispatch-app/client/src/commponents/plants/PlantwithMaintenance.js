@@ -31,7 +31,9 @@ const PlantMaintenance = () => {
   // DELETE PLANT
   const handleDelete = async () => {
     try {
-      const { data } =  await axios.delete(`/api/plants/${id}/`)
+      const { data } =  await axios.delete(`/api/plants/${id}/`, {
+        headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` },
+      })
       setPlant(data)
       history.push('/allplants')
     } catch (err) {
@@ -39,14 +41,6 @@ const PlantMaintenance = () => {
     }
   }
   
-  // const userIsOwner = (userId) => {
-  //   console.log(userId)
-  //   const payload = getPayload()
-  //   if (!payload) return false
-  //   return userId === payload.sub
-
-  // }
-
   return (
     <>
 
