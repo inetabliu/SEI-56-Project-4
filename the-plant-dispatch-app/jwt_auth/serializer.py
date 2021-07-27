@@ -32,4 +32,4 @@ class UserSerializer(serializers.ModelSerializer):
           model = User
           fields = '__all__'
 
-                 
+
