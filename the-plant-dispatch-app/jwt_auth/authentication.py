@@ -3,6 +3,14 @@ from rest_framework.exceptions import PermissionDenied
 from django.contrib.auth import get_user_model
 from django.conf import settings
 import jwt
+# from magic_admin import Magic
+
+# # Pass your API secret key directly to the Magic.
+# magic = Magic(api_secret_key='<YOUR_API_SECRET_KEY>')
+
+# # Or add an environment variable, `MAGIC_API_SECRET_KEY`
+# magic = Magic()
+
 
 User = get_user_model()
 

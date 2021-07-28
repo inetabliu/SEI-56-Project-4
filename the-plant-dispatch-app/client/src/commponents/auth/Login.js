@@ -20,7 +20,7 @@ const Login = () => {
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value })
-    const newError = { ... error, [event.target.name]: event.target.response }
+    const newError = { ... error, [event.target.name]: '' }
     setError(newError)
   }
 
@@ -37,8 +37,7 @@ const Login = () => {
       history.push('/allplants')
       
     } catch (e) {
-      setError(e.response.data.detail)
-      console.log(e.response.data.detail) 
+      setError(e.response.data)
     }
   }
 
@@ -58,9 +57,9 @@ const Login = () => {
           value={formData.email}
           onChange={handleChange}  
         />
-        <Form.Text className="text-muted">
-      Your email is save with us
-        </Form.Text>
+        <small className="text-muted">
+          {error.detail}
+        </small>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formPassword">
@@ -73,6 +72,9 @@ const Login = () => {
           value={formData.password}
           onChange={handleChange}
         />
+        <small className="text-muted">
+          {error.detail}
+        </small>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formCheckbox">
