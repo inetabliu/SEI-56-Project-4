@@ -33,12 +33,24 @@ const Navigation = () => {
     return now < payload.exp
   }
 
- 
+  const navStyle = {
+    background: '#FAF1CF',
+  }
+
+  const buttonStyle = {
+    background: '#3F6844',
+    borderColor: '#C4C4C4',
+    boxShadow: '2px 2px #C4C4C4',
+    marginLeft: '2.5%',
+    borderRadius: '5px',
+    color: '#FFF',
+  }
+  
 
   return (
-    <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+    <Navbar collapseOnSelect expand="lg"  variant="light" style={navStyle}>
       <Container>
-        <Navbar.Brand href="/">M</Navbar.Brand>
+        <Navbar.Brand href="/"><img src="https://res.cloudinary.com/inetab/image/upload/c_scale,w_100/v1627490166/SEI_Project_4/n2cogipagzmjmiv9ddqv.png"/></Navbar.Brand>
         <span onClick={handleToggle} className={`navbar-burger ${isActive ? 'is-active' : ''}`}>
           <span></span>
           <span></span>
@@ -48,18 +60,18 @@ const Navigation = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           {userIsAuthenticated() &&
           <Nav className="me-auto">
-            <Nav.Link href="/maintenance">Maintenance</Nav.Link>
-            <Nav.Link href="/allplants"eventKey={2}> My collection
+            <Nav.Link href="/maintenance">Maintenace</Nav.Link>
+            <Nav.Link href="/allplants"eventKey={2}> <i className="fas fa-seedling"></i>
             </Nav.Link>
           </Nav>
           }
           {!userIsAuthenticated() ?
-            <Nav className="me-auto">
-              <Nav.Link href="/register">Register</Nav.Link>
-              <Nav.Link href="/login">Login</Nav.Link>
+            <Nav className="ms-auto">
+              <Nav.Link  style={buttonStyle} href="/register">Register</Nav.Link>
+              <Nav.Link style={buttonStyle} href="/login">Login</Nav.Link>
             </Nav>
             :
-            <Button onClick={handleLogout}>Log out</Button>
+            <Button style={buttonStyle}onClick={handleLogout}>Log out</Button>
           }
         </Navbar.Collapse>
       </Container>

@@ -26,26 +26,37 @@ const PlantShowPage = () => {
   },[] )
 
 
+  const fontStyle = {
+    color: '#FAF1CF',
+    textShadow: '2px 2px #006B38',
+    textAlign: 'center',
+    textTransform: 'uppercase',
+  }
+
+  const smallFontStyle = {
+    marginTop: '5%',
+    color: '#FAF1CF',
+    textAlign: 'center',
+  }
 
 
   return ( 
     <>
-      <Container className="d-flex justify-content-around flex-wrap container">
-        {plants.length === 0 ? <p>You have no plants to show use add plant button bellow to add to your collection</p>
+      <Container className="row row-cols-1 row-cols-md-3 g-4">
+        {plants.length === 0 ? 
+          <div className="container"><h1>No plants in your collection add one now</h1></div>
+          
           :
           plants.map(plant => 
             <Row key={plant.id} xs={1} md={2} className="g-4">
-              <Card border="success" className="bg-success bg-gradient" style={{ width: '18rem' }}>
-                <Link >
-                  <Card.Title>{plant.plant_name}</Card.Title>
-                </Link>
-          
+              <Card border="success" className="bg-success bg-gradient h-100" style={{ width: '18rem' }}>
+                <Card.Title style={fontStyle}>{plant.plant_name}</Card.Title>
                 <Card.Body>
                   <Card.Img variant="top" src={plant.image}/>
-                  <Card.Text>
+                  <Card.Text style={smallFontStyle}>
               Genus: {plant.genus}
                   </Card.Text>
-                  <Card.Text>
+                  <Card.Text style={smallFontStyle}>
               Origin: {plant.origin}
                   </Card.Text>
                 </Card.Body>
@@ -54,10 +65,9 @@ const PlantShowPage = () => {
             </Row>
           )
         }
-       
       </Container>
-      <div className="d-grid gap-2">
-        <Button href="/newplant" variant="success" size="lg" className="fixed-bottom">
+      <div className="d-grid gap-2" style={{ 'margin-top': '5%' }}>
+        <Button href="/newplant" variant="success" size="lg" >
     Add new Plant
         </Button>
       </div> 
