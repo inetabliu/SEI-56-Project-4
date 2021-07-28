@@ -15,7 +15,6 @@ const PlantForm = ({ formdata, handleSubmit, handleChange, handleImageUrl, butto
           value={formdata.plant_name}
           onChange={handleChange}
         />
-        <small></small>
       </div>
 
       <label className="label">Botanical Name</label>

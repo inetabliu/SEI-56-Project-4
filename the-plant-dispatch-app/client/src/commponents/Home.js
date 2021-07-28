@@ -5,7 +5,7 @@ const Home = () => {
 
 
   return (
-    <h1>home</h1>
+    <h1><i className="fas fa-seedling"></i></h1>
   )
 }
 
