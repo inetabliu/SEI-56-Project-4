@@ -6,6 +6,8 @@ import { Container } from 'react-bootstrap'
 import { Nav, Button } from 'react-bootstrap'
 import { getPayload } from './helpers/auth.js'
 import { useHistory, useLocation } from 'react-router-dom'
+import InfoToolTip from './Popups/InfoToolTip.js'
+import InfoPlantToolTip from './Popups/InfoPlantTooltip.js'
 
 
 const Navigation = () => {
@@ -58,10 +60,12 @@ const Navigation = () => {
         </span>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
+     
+          
           {userIsAuthenticated() &&
           <Nav className="me-auto">
-            <Nav.Link href="/maintenance">Maintenace</Nav.Link>
-            <Nav.Link href="/allplants"eventKey={2}> <i className="fas fa-seedling"></i>
+            <Nav.Link href="/maintenance"><InfoToolTip/></Nav.Link>
+            <Nav.Link href="/allplants"eventKey={2}> <InfoPlantToolTip/>
             </Nav.Link>
           </Nav>
           }
@@ -72,6 +76,7 @@ const Navigation = () => {
             </Nav>
             :
             <Button style={buttonStyle}onClick={handleLogout}>Log out</Button>
+    
           }
         </Navbar.Collapse>
       </Container>

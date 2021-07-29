@@ -34,11 +34,18 @@ const PlantShowPage = () => {
   }
 
   const smallFontStyle = {
-    marginTop: '5%',
+    marginTop: '5px',
     color: '#FAF1CF',
     textAlign: 'center',
   }
 
+  const buttonStyle = {
+    marginBottom: '5%',
+    background: '#FAF1CF',
+    textDecoration: 'none',
+    color: '#006B38',
+    borderColor: '#006B38',
+  }
 
   return ( 
     <>
@@ -50,9 +57,9 @@ const PlantShowPage = () => {
           plants.map(plant => 
             <Row key={plant.id} xs={1} md={2} className="g-4">
               <Card border="success" className="bg-success bg-gradient h-100" style={{ width: '18rem' }}>
-                <Card.Title style={fontStyle}>{plant.plant_name}</Card.Title>
+                <Card.Title className="mt-2" style={fontStyle}>{plant.plant_name}</Card.Title>
                 <Card.Body>
-                  <Card.Img variant="top" src={plant.image}/>
+                  <Card.Img className="rounded" variant="top" src={plant.image}/>
                   <Card.Text style={smallFontStyle}>
               Genus: {plant.genus}
                   </Card.Text>
@@ -60,7 +67,7 @@ const PlantShowPage = () => {
               Origin: {plant.origin}
                   </Card.Text>
                 </Card.Body>
-                <Button variant="warning"><Link to={`/maintenance/${plant.id}`}>Full view</Link></Button> 
+                <Button  style={buttonStyle}><Link to={`/maintenance/${plant.id}`} s>View Plant</Link></Button> 
               </Card>
             </Row>
           )

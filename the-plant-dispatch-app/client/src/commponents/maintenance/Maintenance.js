@@ -70,13 +70,11 @@ const Maintenance = () => {
 
             <Form.Select name="task" aria-label="Floating label select example" onChange={handleChange}>
               {values.map(task =>
-                <option key={task.key} value={formData.value}>{(task).toLowerCase()}</option>
+                <option key={task.key} value={formData.value}>{task}</option>
               )}
             </Form.Select>
             <Button type="submit">Add record</Button>
           </Form.Group>
-       
-         
         </Form>
       </Container>
       
