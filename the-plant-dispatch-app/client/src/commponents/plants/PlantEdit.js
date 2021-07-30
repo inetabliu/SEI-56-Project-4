@@ -7,10 +7,11 @@ import axios from 'axios'
 import UpdateToast from '../Popups/UpdateToast.js'
 import { getTokenFromLocalStorage } from '../helpers/auth.js'
 
-const PlantEdit = () => {
+
+const PlantEdit = ( { handleImageUrl }) => {
   const { id } = useParams()
   const history = useHistory()
-  const [formData, SetFormData] = useState( {
+  const [formData, setFormData] = useState( {
     plant_name: '',
     botanical_name: '',
     nickname: '',
@@ -21,6 +22,18 @@ const PlantEdit = () => {
     image: '',
   })
 
+  const [errors, setErrors] = useState( {
+    plant_name: '',
+    botanical_name: '',
+    nickname: '',
+    genus: '',
+    nursery_pot: '',
+    origin: '',
+    description: '',
+    image: '',
+  })
+
+
   
   useEffect(() => {
     const getData = async () => {
@@ -28,21 +41,26 @@ const PlantEdit = () => {
         headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` },
       })
       console.log(data)
-      SetFormData(data)
+      setFormData(data)
+      
     }
     getData()
   }, [id])
 
   const handleChange = (event) => {
     const updatedFormData = { ... formData, [event.target.name]: event.target.value }
-    SetFormData(updatedFormData)
+    const newErrors = { ...errors, formData, [event.target.name]: '' }
+    setFormData(updatedFormData)
     console.log(formData)
   }
 
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
-      await axios.put(`/api/plants/${id}/`, formData)
+      await axios.put(`/api/plants/${id}/`, formData, {
+        headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` },
+      
+      })
       history.push(`/maintenance/${id}`)
     } catch (err) {
       console.log(err.response.data)
@@ -56,6 +74,8 @@ const PlantEdit = () => {
         handleChange={handleChange}
         buttonText="Submit changes"
         handleSubmit={handleSubmit}
+        handleImageUrl={handleImageUrl}
+      
       />
     </>
   )

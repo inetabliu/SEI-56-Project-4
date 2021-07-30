@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { useHistory } from 'react-router-dom'
 import { ImageUploadField } from '../ImageUploadField.js'
+import { Form } from 'react-bootstrap'
+
 
 const Register = () => {
 
@@ -42,6 +44,7 @@ const Register = () => {
     } catch (err) {
 
       setErrors(err.response.data)
+      console.log(err.response.data.email[0])
       
     }
   }
@@ -54,13 +57,13 @@ const Register = () => {
   return (
     <>
       
-      <form className="d-flex flex-column align-items-center" onSubmit={handleSubmit}>
+      <Form className="d-flex flex-column align-items-center" onSubmit={handleSubmit}>
         <div className="text-center">
           <h1>Register to catalogue your plant collection</h1>
         </div>
         <div className="form-group">
           <label htmlFor="username">Username</label>
-          <input 
+          <input
             type="text" 
             className="form-control" 
             id="username" 
@@ -69,12 +72,12 @@ const Register = () => {
             name="username"
             onChange={handleChange}
           />
-          <small className="form-text text-muted">{errors.username}</small> 
+          <small className="form-text text-muted">{errors.username[0]}</small> 
         </div>
 
         <div className="form-group">
           <label htmlFor="fullName">Full Name</label>
-          <input 
+          <input
             type="text" 
             className="form-control" 
             id="fullName" 
@@ -83,7 +86,7 @@ const Register = () => {
             name="full_name"
             onChange={handleChange}
           />
-          <small className="form-text text-muted">{errors.full_name}</small> 
+          <small className="form-text text-muted">{errors.full_name[0]}</small> 
         </div>
 
         <div className="form-group">
@@ -98,22 +101,21 @@ const Register = () => {
             value={formData.email}
             onChange={handleChange}
           />
-          <small id="emailHelp" className="form-text text-muted">Your email is secure with us.</small>
-          <p>{errors.email}</p> 
+          <small className="form-text text-muted"  >{errors.email[0]}</small> 
         </div>
 
         <div className="form-group">
-          <label htmlFor="exampleInputPassword1">Password</label>
-          <input 
+          <label htmlFor="InputPassword1">Password</label>
+          <input
             type="password" 
             className="form-control" 
-            id="exampleInputPassword1"
+            id="InputPassword"
             placeholder="Enter Your Password"
             name="password"
             value={formData.password}
             onChange={handleChange}
           />
-          <small className="form-text text-muted">{errors.password}</small> 
+          <small className="form-text text-muted">{errors.password[0]}</small> 
         </div>
 
         <div className="form-group">
@@ -127,7 +129,7 @@ const Register = () => {
             value={formData.password_confirmation}
             onChange={handleChange}
           />
-          <small className="form-text text-muted">{errors.password_confirmation}</small> 
+          <small className="form-text text-muted">{errors.password_confirmation[0]}</small> 
         </div>
 
         <div className="form-group">
@@ -137,12 +139,10 @@ const Register = () => {
             onChange={handleChange}
             handleImageUrl={handleImageUrl}
           />
-          <small className="form-text text-muted">{errors.profile_image}</small> 
+          <small className="form-text text-muted">{errors.profile_image[0]}</small> 
         </div>
-
         <button type="submit" className="btn btn-primary">Submit</button>
-
-      </form>
+      </Form>
     </>
   )
 }

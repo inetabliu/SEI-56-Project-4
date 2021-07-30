@@ -11,7 +11,7 @@ const DeleteModal = ({ handleDelete }) => {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant="success" onClick={handleShow}>
         Delete
       </Button>
       <Modal show={show} onHide={handleClose}>

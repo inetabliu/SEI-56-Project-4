@@ -6,6 +6,10 @@ import { Container } from 'react-bootstrap'
 import { Nav, Button } from 'react-bootstrap'
 import { getPayload } from './helpers/auth.js'
 import { useHistory, useLocation } from 'react-router-dom'
+import InfoToolTip from './Popups/InfoToolTip.js'
+import InfoPlantToolTip from './Popups/InfoPlantTooltip.js'
+import RegisterCanvas from './Popups/RegisterCanvas.js'
+import LoginCanvas from './Popups/LoginCanvas.js'
 
 
 const Navigation = () => {
@@ -33,12 +37,25 @@ const Navigation = () => {
     return now < payload.exp
   }
 
- 
+  const navStyle = {
+    background: '#FAF1CF',
+  }
+
+  const buttonStyle = {
+    background: '#3F6844',
+    borderColor: '#C4C4C4',
+    boxShadow: '2px 2px #C4C4C4',
+    marginLeft: '2.5%',
+    borderRadius: '5px',
+    color: '#FFF',
+    display: 'flex',
+  }
+  
 
   return (
-    <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+    <Navbar collapseOnSelect expand="lg"  variant="light" style={navStyle}>
       <Container>
-        <Navbar.Brand href="/">M</Navbar.Brand>
+        <Navbar.Brand href="/"><img src="https://res.cloudinary.com/inetab/image/upload/c_scale,w_100/v1627490166/SEI_Project_4/n2cogipagzmjmiv9ddqv.png"/></Navbar.Brand>
         <span onClick={handleToggle} className={`navbar-burger ${isActive ? 'is-active' : ''}`}>
           <span></span>
           <span></span>
@@ -46,20 +63,31 @@ const Navigation = () => {
         </span>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
+          
           {userIsAuthenticated() &&
-          <Nav>
-            <Nav.Link href="/maintenance">Maintenance</Nav.Link>
-            <Nav.Link href="/allplants"eventKey={2}> My collection
+          <Nav className="me-auto">
+            <Nav.Link href="/maintenance"><InfoToolTip/></Nav.Link>
+            <Nav.Link href="/allplants"eventKey={2}> <InfoPlantToolTip/>
             </Nav.Link>
           </Nav>
           }
           {!userIsAuthenticated() ?
-            <Nav className="me-auto">
-              <Nav.Link href="/register">Register</Nav.Link>
-              <Nav.Link href="/login">Login</Nav.Link>
+         
+            <Nav className="ms-auto">
+              <LoginCanvas/>
+              <RegisterCanvas/>
             </Nav>
+            
             :
-            <Button onClick={handleLogout}>Log out</Button>
+            <Nav>
+              
+              <Nav.Link variant="secondary"style={buttonStyle}href="/newplant">
+                <i className="fas fa-plus"></i> Plant
+              </Nav.Link>
+              <Button style={buttonStyle}onClick={handleLogout}>Log out</Button>
+            </Nav>
+            
+    
           }
         </Navbar.Collapse>
       </Container>

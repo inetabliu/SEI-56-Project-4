@@ -1,0 +1,227 @@
+[
+{
+  "model": "plants.plant",
+  "pk": 13,
+  "fields": {
+    "plant_name": "Pilea",
+    "botanical_name": "Pilea peperomioides",
+    "nickname": "Pancake Plant",
+    "genus": "Pilea",
+    "nursery_pot": 12,
+    "image": "http://res.cloudinary.com/inetab/image/upload/v1627294346/SEI_Project_4/lmyuoo1gadsqm0rcsjph.jpg",
+    "origin": "China",
+    "description": "",
+    "owner": 1
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 14,
+  "fields": {
+    "plant_name": "Philodendron Burle Max",
+    "botanical_name": "Philodendron Burle Marxii",
+    "nickname": "",
+    "genus": "Philodendron",
+    "nursery_pot": 12,
+    "image": "http://res.cloudinary.com/inetab/image/upload/v1627294391/SEI_Project_4/bjhspwewhvaxsdb3wkls.jpg",
+    "origin": "Brazil",
+    "description": "",
+    "owner": 1
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 17,
+  "fields": {
+    "plant_name": "Philodendron Verrucosum",
+    "botanical_name": "",
+    "nickname": "Ecuador Philodendron",
+    "genus": "Philodendron",
+    "nursery_pot": 18,
+    "image": "http://res.cloudinary.com/inetab/image/upload/v1627305804/SEI_Project_4/hodz4b5yopswqnfmm9c7.jpg",
+    "origin": "Equador",
+    "description": "This flowering aroid has enormous, velvety, emerald-green leaves with light-green venation. The burgundy shade between its veins is its real eye-catching feature.",
+    "owner": 1
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 18,
+  "fields": {
+    "plant_name": "Philodendron Gloriosum",
+    "botanical_name": "",
+    "nickname": "",
+    "genus": "Philodendron",
+    "nursery_pot": 8,
+    "image": "http://res.cloudinary.com/inetab/image/upload/v1627305829/SEI_Project_4/wpfnctzxgc49hngplzrf.jpg",
+    "origin": "Columbia",
+    "description": "Philodendron gloriosum belongs to the Araceae family and is a terrestrial plant. It is within the Philodendron genus and is a crawling Philodendron with heartleaf shaped green velvety foliage and pale to striking white veins.",
+    "owner": 1
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 19,
+  "fields": {
+    "plant_name": "Caladium Frog In A Blender",
+    "botanical_name": "",
+    "nickname": "Elephants Ear",
+    "genus": "Caladium",
+    "nursery_pot": 12,
+    "image": "http://res.cloudinary.com/inetab/image/upload/v1627306246/SEI_Project_4/yliss6xalzvtmslmvo9q.jpg",
+    "origin": "South America",
+    "description": "Blitz your borders and patio pots with easy and chic style with this fun a funky character, Caladium 'Frog in a Blender'. Its jovial name portrays a certain grotesque image, but we can assure you that no frogs have been harmed!",
+    "owner": 1
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 21,
+  "fields": {
+    "plant_name": "Philodendron Mamei",
+    "botanical_name": "",
+    "nickname": "",
+    "genus": "Philodendron",
+    "nursery_pot": 20,
+    "image": "http://res.cloudinary.com/inetab/image/upload/v1627324746/SEI_Project_4/m7knxvc93xxmwqvveu7s.jpg",
+    "origin": "Brazil",
+    "description": "",
+    "owner": 1
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 22,
+  "fields": {
+    "plant_name": "Test",
+    "botanical_name": "Test",
+    "nickname": "My fave",
+    "genus": "Pilea",
+    "nursery_pot": 15,
+    "image": "http://res.cloudinary.com/inetab/image/upload/v1627398377/SEI_Project_4/qh0kkdhrgazkhmpunvlk.jpg",
+    "origin": "China",
+    "description": "",
+    "owner": 14
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 23,
+  "fields": {
+    "plant_name": "Philodendron Pink Princess",
+    "botanical_name": "Philodendron erubescens",
+    "nickname": "Pink Princess",
+    "genus": "Philodendron",
+    "nursery_pot": 15,
+    "image": "http://res.cloudinary.com/inetab/image/upload/v1627414642/SEI_Project_4/otyjmsnxjqfv6jp6isyj.jpg",
+    "origin": "Columbia",
+    "description": "The plant is a man-made hybrid, developed in the 1970s by breeding two different philodendron species. The pink splotches, called variegation, come from a genetic mutation.",
+    "owner": 1
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 24,
+  "fields": {
+    "plant_name": "Philodendron 'Birkin'",
+    "botanical_name": "",
+    "nickname": "Philodendron White Wave",
+    "genus": "Philodendron",
+    "nursery_pot": 13,
+    "image": "http://res.cloudinary.com/inetab/image/upload/v1627416386/SEI_Project_4/v5j18ru8k5mrqopuwchq.jpg",
+    "origin": "Paruguay",
+    "description": "Cultivated variety of Philodendron Rojo Congo",
+    "owner": 1
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 25,
+  "fields": {
+    "plant_name": "Begonia Maculata",
+    "botanical_name": "Begonia Maculata Raddi",
+    "nickname": "Polka Dot Begonia",
+    "genus": "Begonia",
+    "nursery_pot": 13,
+    "image": "http://res.cloudinary.com/inetab/image/upload/v1627416415/SEI_Project_4/rjlwr5k9lu3n1cpjpgap.jpg",
+    "origin": "Brazil",
+    "description": "",
+    "owner": 1
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 26,
+  "fields": {
+    "plant_name": "Oxalis Triangularis",
+    "botanical_name": "",
+    "nickname": "False shamrock",
+    "genus": "Oxalis",
+    "nursery_pot": 12,
+    "image": "http://res.cloudinary.com/inetab/image/upload/v1627416531/SEI_Project_4/ma7d2rvz93ovj9xmsg0l.jpg",
+    "origin": "South America",
+    "description": "",
+    "owner": 1
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 27,
+  "fields": {
+    "plant_name": "Monstera Deliciosa 'Variegata'",
+    "botanical_name": "Monstera Deliciosa",
+    "nickname": "Swiss Cheese Plant",
+    "genus": "Monstera",
+    "nursery_pot": 35,
+    "image": "http://res.cloudinary.com/inetab/image/upload/v1627416683/SEI_Project_4/f7nwncg6y561jofiopj9.jpg",
+    "origin": "Mexico",
+    "description": "",
+    "owner": 1
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 28,
+  "fields": {
+    "plant_name": "Monstera Deliciosa",
+    "botanical_name": "",
+    "nickname": "Swiss Cheese Plant",
+    "genus": "Monstera",
+    "nursery_pot": 30,
+    "image": "http://res.cloudinary.com/inetab/image/upload/v1627417148/SEI_Project_4/hxf92os4tmt7dymtolqw.jpg",
+    "origin": "Mexico",
+    "description": "",
+    "owner": 1
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 29,
+  "fields": {
+    "plant_name": "Calathea Orbifolia",
+    "botanical_name": "",
+    "nickname": "Prayer Plant",
+    "genus": "Calathea",
+    "nursery_pot": 18,
+    "image": "http://res.cloudinary.com/inetab/image/upload/v1627417312/SEI_Project_4/lcrrqpzk0kafm1lke6oo.jpg",
+    "origin": "South America",
+    "description": "",
+    "owner": 1
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 30,
+  "fields": {
+    "plant_name": "Philodendron 'Painted Lady'",
+    "botanical_name": "",
+    "nickname": "",
+    "genus": "Philodendron",
+    "nursery_pot": 16,
+    "image": "http://res.cloudinary.com/inetab/image/upload/v1627417449/SEI_Project_4/dueebbgivvywzbtqfhrj.jpg",
+    "origin": "South America",
+    "description": "",
+    "owner": 1
+  }
+}
+]
