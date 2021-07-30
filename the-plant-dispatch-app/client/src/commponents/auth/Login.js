@@ -40,6 +40,14 @@ const Login = () => {
       setError(e.response.data)
     }
   }
+  const buttonStyle = {
+    background: '#3F6844',
+    borderColor: '#C4C4C4',
+    boxShadow: '2px 2px #C4C4C4',
+    marginLeft: '2.5%',
+    borderRadius: '5px',
+    color: '#FFF',
+  }
 
 
   return (
@@ -82,8 +90,9 @@ const Login = () => {
       </Form.Group>
 
       <Button 
-        variant="primary" 
-        type="submit">
+        variant="success" 
+        type="submit"
+        style={buttonStyle}>
       Submit</Button>
     </Form>
   )

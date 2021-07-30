@@ -8,6 +8,8 @@ import { getPayload } from './helpers/auth.js'
 import { useHistory, useLocation } from 'react-router-dom'
 import InfoToolTip from './Popups/InfoToolTip.js'
 import InfoPlantToolTip from './Popups/InfoPlantTooltip.js'
+import RegisterCanvas from './Popups/RegisterCanvas.js'
+import LoginCanvas from './Popups/LoginCanvas.js'
 
 
 const Navigation = () => {
@@ -46,6 +48,7 @@ const Navigation = () => {
     marginLeft: '2.5%',
     borderRadius: '5px',
     color: '#FFF',
+    display: 'flex',
   }
   
 
@@ -60,7 +63,6 @@ const Navigation = () => {
         </span>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-     
           
           {userIsAuthenticated() &&
           <Nav className="me-auto">
@@ -71,11 +73,18 @@ const Navigation = () => {
           }
           {!userIsAuthenticated() ?
             <Nav className="ms-auto">
-              <Nav.Link  style={buttonStyle} href="/register">Register</Nav.Link>
-              <Nav.Link style={buttonStyle} href="/login">Login</Nav.Link>
+              <RegisterCanvas/>
+              <LoginCanvas/>
             </Nav>
             :
-            <Button style={buttonStyle}onClick={handleLogout}>Log out</Button>
+            <Nav>
+              
+              <Nav.Link variant="secondary"style={buttonStyle}href="/newplant">
+                <i className="fas fa-plus"></i> Plant
+              </Nav.Link>
+              <Button style={buttonStyle}onClick={handleLogout}>Log out</Button>
+            </Nav>
+            
     
           }
         </Navbar.Collapse>

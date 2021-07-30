@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { useHistory } from 'react-router-dom'
 import { ImageUploadField } from '../ImageUploadField.js'
+import { Form } from 'react-bootstrap'
+import RegisterCanvas from '../Popups/RegisterCanvas.js'
 
 const Register = () => {
 
@@ -55,13 +57,13 @@ const Register = () => {
   return (
     <>
       
-      <form className="d-flex flex-column align-items-center" onSubmit={handleSubmit}>
+      <Form className="d-flex flex-column align-items-center" onSubmit={handleSubmit}>
         <div className="text-center">
           <h1>Register to catalogue your plant collection</h1>
         </div>
         <div className="form-group">
           <label htmlFor="username">Username</label>
-          <input 
+          <Form.Input 
             type="text" 
             className="form-control" 
             id="username" 
@@ -75,7 +77,7 @@ const Register = () => {
 
         <div className="form-group">
           <label htmlFor="fullName">Full Name</label>
-          <input 
+          <Form.Input 
             type="text" 
             className="form-control" 
             id="fullName" 
@@ -89,7 +91,7 @@ const Register = () => {
 
         <div className="form-group">
           <label htmlFor="emailAddress">Email address</label>
-          <input 
+          <Form.Input 
             type="email"
             className="form-control"
             id="email"
@@ -104,11 +106,11 @@ const Register = () => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="exampleInputPassword1">Password</label>
-          <input 
+          <label htmlFor="InputPassword1">Password</label>
+          <Form.Input 
             type="password" 
             className="form-control" 
-            id="exampleInputPassword1"
+            id="InputPassword"
             placeholder="Enter Your Password"
             name="password"
             value={formData.password}
@@ -119,7 +121,7 @@ const Register = () => {
 
         <div className="form-group">
           <label htmlFor="passwordCofnirmation">Password Confirmation</label>
-          <input 
+          <Form.Input 
             type="password"
             className="form-control"
             id="passwordConfirmation"
@@ -143,7 +145,8 @@ const Register = () => {
 
         <button type="submit" className="btn btn-primary">Submit</button>
 
-      </form>
+      </Form>
+     
     </>
   )
 }

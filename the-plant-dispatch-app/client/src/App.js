@@ -10,6 +10,9 @@ import Home from './commponents/Home.js'
 import PlantCreateForm from './commponents/plants/PlantCreateForm.js'
 import Maintenance from './commponents/maintenance/Maintenance.js'
 import PlantEdit from './commponents/plants/PlantEdit.js'
+import RegisterCanvas from './commponents/Popups/RegisterCanvas.js'
+import LoginCanvas from './commponents/Popups/LoginCanvas.js'
+import Footer from './commponents/Footer.js'
 
 
 
@@ -25,10 +28,11 @@ const App = () => {
         <Route path="/maintenance/:id" component={PlantMaintenance}/>
         <Route path="/maintenance" component={Maintenance}/>
         <Route path="/allplants" component={PlantShowPage}/>
-        <Route path="/login" component={Login}/>
-        <Route path="/register" component={Register}/>
+        <Route path="/login" component={LoginCanvas}/>
+        <Route path="/register" component={RegisterCanvas}/>
         <Route eaxct path="/" component={Home}/>
       </Switch>
+      <Footer/>
     </BrowserRouter>
   )
 }

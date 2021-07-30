@@ -5,6 +5,15 @@ import { ImageUploadField } from '../ImageUploadField.js'
 
 const PlantForm = ({ formdata, handleSubmit, handleChange, handleImageUrl, buttonText = 'Submit' }) => {
 
+  const buttonStyle = {
+    background: '#3F6844',
+    borderColor: '#C4C4C4',
+    boxShadow: '2px 2px #C4C4C4',
+    borderRadius: '5px',
+    color: '#FFF',
+    textTransform: 'uppercase',
+    marginBottom: '5%',
+  }
   return (
     <Form className="d-flex flex-column align-items-center" onSubmit={handleSubmit}>
       <label className="label">Plant Name</label>
@@ -83,7 +92,7 @@ const PlantForm = ({ formdata, handleSubmit, handleChange, handleImageUrl, butto
         name="image"
         handleImageUrl={handleImageUrl}
       />
-      <Button type="submit">{buttonText}</Button>
+      <Button style={buttonStyle}type="submit">{buttonText}</Button>
     </Form>
   )
 }
