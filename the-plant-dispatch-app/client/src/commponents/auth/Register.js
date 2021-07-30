@@ -4,7 +4,7 @@ import axios from 'axios'
 import { useHistory } from 'react-router-dom'
 import { ImageUploadField } from '../ImageUploadField.js'
 import { Form } from 'react-bootstrap'
-import RegisterCanvas from '../Popups/RegisterCanvas.js'
+
 
 const Register = () => {
 
@@ -63,7 +63,7 @@ const Register = () => {
         </div>
         <div className="form-group">
           <label htmlFor="username">Username</label>
-          <Form.Input 
+          <input
             type="text" 
             className="form-control" 
             id="username" 
@@ -77,7 +77,7 @@ const Register = () => {
 
         <div className="form-group">
           <label htmlFor="fullName">Full Name</label>
-          <Form.Input 
+          <input
             type="text" 
             className="form-control" 
             id="fullName" 
@@ -91,7 +91,7 @@ const Register = () => {
 
         <div className="form-group">
           <label htmlFor="emailAddress">Email address</label>
-          <Form.Input 
+          <input 
             type="email"
             className="form-control"
             id="email"
@@ -101,13 +101,12 @@ const Register = () => {
             value={formData.email}
             onChange={handleChange}
           />
-   
           <small className="form-text text-muted"  >{errors.email[0]}</small> 
         </div>
 
         <div className="form-group">
           <label htmlFor="InputPassword1">Password</label>
-          <Form.Input 
+          <input
             type="password" 
             className="form-control" 
             id="InputPassword"
@@ -121,7 +120,7 @@ const Register = () => {
 
         <div className="form-group">
           <label htmlFor="passwordCofnirmation">Password Confirmation</label>
-          <Form.Input 
+          <input 
             type="password"
             className="form-control"
             id="passwordConfirmation"
@@ -142,11 +141,8 @@ const Register = () => {
           />
           <small className="form-text text-muted">{errors.profile_image[0]}</small> 
         </div>
-
         <button type="submit" className="btn btn-primary">Submit</button>
-
       </Form>
-     
     </>
   )
 }

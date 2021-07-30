@@ -15,6 +15,7 @@ const Home = () => {
   const title = {
     fontWeight: 'extra-bold', 
     fontFamily: 'Staatliches, cursive',
+    fontSize: '5rem',
   }
 
   const carrouselStyle = {

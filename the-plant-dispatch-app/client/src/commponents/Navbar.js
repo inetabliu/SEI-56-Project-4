@@ -72,10 +72,12 @@ const Navigation = () => {
           </Nav>
           }
           {!userIsAuthenticated() ?
+         
             <Nav className="ms-auto">
-              <RegisterCanvas/>
               <LoginCanvas/>
+              <RegisterCanvas/>
             </Nav>
+            
             :
             <Nav>
               

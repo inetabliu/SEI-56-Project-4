@@ -5,12 +5,12 @@ import {  Navbar, Nav } from 'react-bootstrap'
 const Footer = () => {
   const navStyle = {
     background: '#FAF1CF',
+    justifyContent: 'center',
   }
 
   const fontStyle = {
-    textAlign: 'center',
     color: '#006B38',
-    justifyContent: 'center',
+ 
   }
   return (
 

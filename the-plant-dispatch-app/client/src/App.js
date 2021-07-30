@@ -29,7 +29,7 @@ const App = () => {
         <Route path="/maintenance" component={Maintenance}/>
         <Route path="/allplants" component={PlantShowPage}/>
         <Route path="/login" component={LoginCanvas}/>
-        <Route path="/register" component={RegisterCanvas}/>
+        <Route exact path="/register" component={RegisterCanvas}/>
         <Route eaxct path="/" component={Home}/>
       </Switch>
       <Footer/>
