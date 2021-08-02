@@ -68,11 +68,12 @@ const PlantCreateForm = () => {
   
   return (
     <>
-      <div className="text-center">
+      <div style={{ marginTop: '5%' }} className="text-center">
         <h1>Got another plant again?</h1>
         <p>Add it to your collection</p>
       </div>
       <PlantForm
+        
         formdata={formdata}
         handleChange={handleChange}
         handleImageUrl={handleImageUrl}

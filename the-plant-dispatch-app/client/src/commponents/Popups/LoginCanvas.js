@@ -5,8 +5,8 @@ import Login from '../auth/Login.js'
 const LoginCanvas = ( ) => {
   const [show, setShow] = useState(false)
 
-  const handleClose = () => setShow(false)
-  const handleShow = () => setShow(true)
+  const handleLoginClose = () => setShow(false)
+  const handleLoginShow = () => setShow(true)
 
   const buttonStyle = {
     background: '#3F6844',
@@ -24,11 +24,11 @@ const LoginCanvas = ( ) => {
 
   return (
     <>
-      <Button  style={buttonStyle}variant="primary" onClick={handleShow}>
+      <Button  style={buttonStyle}variant="primary" onClick={handleLoginShow}>
     Login
       </Button>
 
-      <Offcanvas  style={canvasStyle} show={show} onHide={handleClose}>
+      <Offcanvas  style={canvasStyle} show={show} onHide={handleLoginClose}>
         <Offcanvas.Header closeButton>
         </Offcanvas.Header>
         <Offcanvas.Body>
