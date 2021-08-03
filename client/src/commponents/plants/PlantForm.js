@@ -15,7 +15,7 @@ const PlantForm = ({ formdata, handleSubmit, handleChange, handleImageUrl, butto
     marginBottom: '5%',
   }
   return (
-    <Container>
+    <Container style={{ marginBottom: '5%' }}>
       <Form className="d-flex flex-column align-items-center" onSubmit={handleSubmit}>
         <label className="label">Plant Name</label>
         <div className="control">

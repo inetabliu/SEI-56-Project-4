@@ -16,7 +16,7 @@ const Home = () => {
     fontWeight: 'extra-bold', 
     fontFamily: 'Staatliches, cursive',
     fontSize: '5rem',
-    marginTop: '5%',
+    marginTop: '10%',
   }
 
   const carrouselStyle = {
