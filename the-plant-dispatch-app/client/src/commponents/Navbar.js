@@ -53,7 +53,7 @@ const Navigation = () => {
   
 
   return (
-    <Navbar collapseOnSelect expand="lg"  variant="light" style={navStyle}>
+    <Navbar fixed='top' collapseOnSelect expand="lg"  variant="light" style={navStyle}>
       <Container>
         <Navbar.Brand href="/"><img src="https://res.cloudinary.com/inetab/image/upload/c_scale,w_100/v1627490166/SEI_Project_4/n2cogipagzmjmiv9ddqv.png"/></Navbar.Brand>
         <span onClick={handleToggle} className={`navbar-burger ${isActive ? 'is-active' : ''}`}>

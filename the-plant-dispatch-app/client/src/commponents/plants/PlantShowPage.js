@@ -46,6 +46,7 @@ const PlantShowPage = () => {
     textDecoration: 'none',
     color: '#006B38',
     borderColor: '#006B38',
+    textAlign: 'center',
   }
 
   const linkStyle = {
@@ -77,9 +78,15 @@ const PlantShowPage = () => {
 
   return ( 
     <>
-      <Container className="row row-cols-1 row-cols-md-3 g-4">
+      <Container style={{ marginTop: '5%' }} className="row row-cols-1 row-cols-md-3 g-4">
         {plants.length === 0 ? 
-          <div className="container"><h1>No plants in your collection add one now</h1></div>
+          <div className="container">
+            <h1 style={titleStyle} >No plants in your collection add one now</h1>
+            <img src="https://media.istockphoto.com/photos/empty-room-with-window-in-modern-house-picture-id585173414?k=6&m=585173414&s=170667a&w=0&h=oO0GssA1Xf_yBOk5PB73rtiUl8VGeQEMIRt9ZvhJPBY="/>
+            <Button variant="secondary"style={buttonStyle} href="/newplant">
+              <i className="fas fa-plus"></i> Plant
+            </Button>
+          </div>
           
           :
           plants.map(plant => 

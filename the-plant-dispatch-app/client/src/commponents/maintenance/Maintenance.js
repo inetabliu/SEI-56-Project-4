@@ -16,7 +16,7 @@ const Maintenance = () => {
   const history = useHistory()
   const { id } = useParams()
   const [plantData, setPlantData] = useState([])
-  const values = ['WATERRED ON', 'REPOTTED ON', 'FERTILIZED ON', 'PEST TREATMENT']
+  const values = ['Select a task', 'WATERED ON', 'REPOTTED ON', 'FERTILIZED ON', 'PEST TREATMENT']
 
   useEffect(() => {
     const getData = async () => {
@@ -57,9 +57,9 @@ const Maintenance = () => {
 
   const formStyle = {
     width: '50%',
-    marginTop: '5%',
+    marginTop: '15%',
     textTransform: 'uppercase',
-    textDecoration: 'underline dotted',
+    textDecoration: 'underline',
     color: '#006B38',
     textAlign: 'center',
     background: '#FAD0C9',

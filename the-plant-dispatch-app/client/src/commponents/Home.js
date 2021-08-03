@@ -16,6 +16,7 @@ const Home = () => {
     fontWeight: 'extra-bold', 
     fontFamily: 'Staatliches, cursive',
     fontSize: '5rem',
+    marginTop: '5%',
   }
 
   const carrouselStyle = {
@@ -45,7 +46,7 @@ const Home = () => {
             <p>For the love of plants</p>
           </Carousel.Caption>
         </Carousel.Item>
-        <Carousel.Item interval={500}>
+        <Carousel.Item interval={1000}>
           <img
             className="d-block w-100"
             src="https://images.ctfassets.net/i3tkg7dt3kro/2bgsHWfZKFDWcG3P3OhZmY/1e119f6d728517c1c8d78bd2f092dca7/heartleaf-philodendron.jpg"

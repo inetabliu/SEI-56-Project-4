@@ -15,7 +15,6 @@ const Register = () => {
     email: '',
     password: '',
     password_confirmation: '',
-    profile_image: '',
   })
 
   const [errors, setErrors] = useState({
@@ -24,7 +23,6 @@ const Register = () => {
     email: '',
     password: '',
     password_confirmation: '',
-    profile_image: '',
   })
   
   const handleChange = event => {
@@ -33,26 +31,31 @@ const Register = () => {
     setFormData({ ...formData, [event.target.name]: value })
     const newErrors = { ...errors, [event.target.name]: '' }
     setErrors(newErrors)
+    console.log('new errors', newErrors)
   }
 
   const handleSubmit = async event => {
     event.preventDefault()
     try {
       const response = await axios.post('/api/auth/register/', formData)
-      history.push('/login')
-      console.log(response.data)
+      
     } catch (err) {
-
-      setErrors(err.response.data)
-      console.log(err.response.data.email[0])
+      return setErrors(err.response.data)
+      
+  
       
     }
   }
 
-
-  const handleImageUrl = url => {
-    setFormData({ ... formData, profile_image: url })
+  const buttonStyle = {
+    background: '#3F6844',
+    borderColor: '#C4C4C4',
+    boxShadow: '2px 2px #C4C4C4',
+    marginLeft: '2.5%',
+    borderRadius: '5px',
+    color: '#FFF',
   }
+
 
   return (
     <>
@@ -72,7 +75,7 @@ const Register = () => {
             name="username"
             onChange={handleChange}
           />
-          <small className="form-text text-muted">{errors.username[0]}</small> 
+          {<small className="form-text text-muted">{errors.username[0]}</small>}
         </div>
 
         <div className="form-group">
@@ -86,7 +89,7 @@ const Register = () => {
             name="full_name"
             onChange={handleChange}
           />
-          <small className="form-text text-muted">{errors.full_name[0]}</small> 
+          {<small className="form-text text-muted">{errors.full_name[0]}</small>}
         </div>
 
         <div className="form-group">
@@ -101,7 +104,7 @@ const Register = () => {
             value={formData.email}
             onChange={handleChange}
           />
-          <small className="form-text text-muted"  >{errors.email[0]}</small> 
+          {<small className="form-text text-muted"  >{errors.email[0]}</small> }
         </div>
 
         <div className="form-group">
@@ -115,7 +118,7 @@ const Register = () => {
             value={formData.password}
             onChange={handleChange}
           />
-          <small className="form-text text-muted">{errors.password[0]}</small> 
+          {<small className="form-text text-muted">{errors.password[0]}</small> }
         </div>
 
         <div className="form-group">
@@ -129,19 +132,8 @@ const Register = () => {
             value={formData.password_confirmation}
             onChange={handleChange}
           />
-          <small className="form-text text-muted">{errors.password_confirmation[0]}</small> 
         </div>
-
-        <div className="form-group">
-          <ImageUploadField
-            value={formData.profile_image}
-            name="image"
-            onChange={handleChange}
-            handleImageUrl={handleImageUrl}
-          />
-          <small className="form-text text-muted">{errors.profile_image[0]}</small> 
-        </div>
-        <button type="submit" className="btn btn-primary">Submit</button>
+        <button style={buttonStyle}type="submit" className="btn btn-primary">Submit</button>
       </Form>
     </>
   )

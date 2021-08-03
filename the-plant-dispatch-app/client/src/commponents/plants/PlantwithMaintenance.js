@@ -43,12 +43,14 @@ const PlantMaintenance = () => {
 
   const cantStyle = {
     marginTop: '5%',
+    marginBottom: '10%',
   }
 
   const cardStyle = {
     background: '#FAD0C9',
     width: '50rem',
     borderRadius: '5%',
+
   }
 
   const mainCardStle = {
@@ -67,22 +69,39 @@ const PlantMaintenance = () => {
 
   const imgStyle = {
     borderRadius: '5%',
+    width: '50%',
+    alignSelf: 'center',
+    marginTop: '5%',
+  }
+
+  const parStyle = {
+    color: '#006B38',
+    textAlign: 'center',
+  }
+
+  const titleStyle = {
+    textTransform: 'uppercase',
+    textShadow: '2px 2px #FAF1CF',
+    color: '#006B38',
+    textAlign: 'center',
+    marginTop: '5%',
+    fontSize: '4rem',
   }
   return (
     <Container style={cantStyle} className='d-flex'>
       <Card style={cardStyle} key={plant.plant_name}>
         <Card.Img  style={imgStyle} height="auto"  width="400px" src={plant.image} className="img-fluid float-start" alt="plant-image"variant="top"/>
         <Card.Body>
-          <Card.Title>{plant.plant_name}</Card.Title>
-          <Card.Text>
-            <p>{plant.botanical_name}</p>
-            <p>{plant.nickname}</p>
-            <p>{plant.origin}</p>
-            <p>{plant.genus}</p>
-            <p>{plant.nursery_pot}<span>cm</span></p>
-            <p>{plant.description}</p>
+          <Card.Title style={titleStyle}>{plant.plant_name}</Card.Title>
+          <Card.Text style={parStyle}>
+            <p>Botanical name: {plant.botanical_name}</p>
+            <p>Nickname: {plant.nickname}</p>
+            <p>Origin: <strong>{plant.origin}</strong></p>
+            <p>Genus: <strong>{plant.genus}</strong></p>
+            <p>Nursery pot: <strong>{plant.nursery_pot}</strong><span>cm</span></p>
+            <p>Info: {plant.description}</p>
           </Card.Text>
-          <Button variant="success"><Link to={`/plantedit/${plant.id}`}>Edit</Link></Button> 
+          <Button style={{ color: '#fff', marginRight: '5%' }} variant="success"><Link style={{ color: '#fff' }}to={`/plantedit/${plant.id}`}>Edit</Link></Button> 
           <DeleteModal handleDelete={handleDelete}/>
         </Card.Body>
        
@@ -90,7 +109,7 @@ const PlantMaintenance = () => {
 
       <Card key={id}style={mainCardStle}>
         <Card.Body>
-          <Card.Title>Maintenance</Card.Title>
+          <Card.Title>Maintenance Records</Card.Title>
           <Card.Text>
         
             {maintenance.map(el => 

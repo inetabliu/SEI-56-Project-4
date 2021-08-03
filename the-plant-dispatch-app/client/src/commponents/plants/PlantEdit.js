@@ -70,6 +70,7 @@ const PlantEdit = ( { handleImageUrl }) => {
   return (
     <>
       <PlantForm
+        style={{ marginTop: '5%', marginBottom: '5%' }}
         formdata={formData}
         handleChange={handleChange}
         buttonText="Submit changes"
