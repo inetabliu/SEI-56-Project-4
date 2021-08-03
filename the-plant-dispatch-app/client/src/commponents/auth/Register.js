@@ -31,17 +31,17 @@ const Register = () => {
     setFormData({ ...formData, [event.target.name]: value })
     const newErrors = { ...errors, [event.target.name]: '' }
     setErrors(newErrors)
+    console.log('new errors', newErrors)
   }
 
   const handleSubmit = async event => {
     event.preventDefault()
     try {
       const response = await axios.post('/api/auth/register/', formData)
-      console.log(response.data)
-      window.alert('Registration sucessfull head to Login')
+      
     } catch (err) {
-
-      setErrors(err.response.data)
+      return setErrors(err.response.data)
+      
   
       
     }
@@ -75,7 +75,7 @@ const Register = () => {
             name="username"
             onChange={handleChange}
           />
-          {/* <small className="form-text text-muted">{errors.username[0]}</small>  */}
+          {<small className="form-text text-muted">{errors.username[0]}</small>}
         </div>
 
         <div className="form-group">
@@ -89,7 +89,7 @@ const Register = () => {
             name="full_name"
             onChange={handleChange}
           />
-          {/* <small className="form-text text-muted">{errors.full_name[0]}</small>  */}
+          {<small className="form-text text-muted">{errors.full_name[0]}</small>}
         </div>
 
         <div className="form-group">
@@ -104,7 +104,7 @@ const Register = () => {
             value={formData.email}
             onChange={handleChange}
           />
-          {/* <small className="form-text text-muted"  >{errors.email[0]}</small>  */}
+          {<small className="form-text text-muted"  >{errors.email[0]}</small> }
         </div>
 
         <div className="form-group">
@@ -118,7 +118,7 @@ const Register = () => {
             value={formData.password}
             onChange={handleChange}
           />
-          {/* <small className="form-text text-muted">{errors.password[0]}</small>  */}
+          {<small className="form-text text-muted">{errors.password[0]}</small> }
         </div>
 
         <div className="form-group">
@@ -132,7 +132,6 @@ const Register = () => {
             value={formData.password_confirmation}
             onChange={handleChange}
           />
-          {/* <small className="form-text text-muted">{errors.password_confirmation[0]}</small>  */}
         </div>
         <button style={buttonStyle}type="submit" className="btn btn-primary">Submit</button>
       </Form>
