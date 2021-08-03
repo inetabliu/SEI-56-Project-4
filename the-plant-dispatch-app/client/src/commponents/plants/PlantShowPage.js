@@ -92,7 +92,6 @@ const PlantShowPage = () => {
           plants.map(plant => 
             <Row key={plant.id} xs={1} md={2} className="g-4">
               <Card border="success" className="bg-success bg-gradient" style={plantCardStyle}>
-               
                 <Card.Body>
                   <Card.Title className="mt-2" style={fontStyle}>{plant.plant_name}</Card.Title>
                   <Card.Img className="img-fluid"style={imgStyle}  variant="top" src={plant.image}/>

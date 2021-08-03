@@ -37,7 +37,7 @@ const PlantEdit = ( { handleImageUrl }) => {
   
   useEffect(() => {
     const getData = async () => {
-      const { data } = await axios.get(`/api/plants/${id}`, {
+      const { data } = await axios.get(`/api/plants/${id}/`, {
         headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` },
       })
       console.log(data)
