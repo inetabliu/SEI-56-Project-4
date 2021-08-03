@@ -6,6 +6,7 @@ const Footer = () => {
   const navStyle = {
     background: '#FAF1CF',
     justifyContent: 'center',
+    marginTop: '10%',
   }
 
   const fontStyle = {
