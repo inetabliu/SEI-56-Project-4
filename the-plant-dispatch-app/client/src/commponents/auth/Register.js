@@ -40,8 +40,8 @@ const Register = () => {
       const response = await axios.post('/api/auth/register/', formData)
       
     } catch (err) {
-      return setErrors(err.response.data)
-      
+      setErrors(err.response.data)
+      console.log(errors)
   
       
     }
