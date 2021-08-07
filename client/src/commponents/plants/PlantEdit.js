@@ -4,11 +4,11 @@ import PlantForm from './PlantForm.js'
 import React, { useState, useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 import axios from 'axios'
-import UpdateToast from '../Popups/UpdateToast.js'
 import { getTokenFromLocalStorage } from '../helpers/auth.js'
 
 
 const PlantEdit = ( { handleImageUrl }) => {
+
   const { id } = useParams()
   const history = useHistory()
   const [formData, setFormData] = useState( {
@@ -66,7 +66,7 @@ const PlantEdit = ( { handleImageUrl }) => {
       console.log(err.response.data)
     }
   }
- 
+
   return (
     <>
       <PlantForm

@@ -14,6 +14,7 @@ const PlantForm = ({ formdata, handleSubmit, handleChange, handleImageUrl, butto
     textTransform: 'uppercase',
     marginBottom: '5%',
   }
+  
   return (
     <Container style={{ marginBottom: '5%' }}>
       <Form className="d-flex flex-column align-items-center" onSubmit={handleSubmit}>
@@ -27,7 +28,6 @@ const PlantForm = ({ formdata, handleSubmit, handleChange, handleImageUrl, butto
           />
           <small>{formdata.errors}</small>
         </div>
-
         <label className="label">Botanical Name</label>
         <div className="control">
           <input
@@ -37,7 +37,6 @@ const PlantForm = ({ formdata, handleSubmit, handleChange, handleImageUrl, butto
             onChange={handleChange}
           />
         </div>
-
         <label className="label">Nickname</label>
         <div className="control">
           <input
@@ -47,7 +46,6 @@ const PlantForm = ({ formdata, handleSubmit, handleChange, handleImageUrl, butto
             onChange={handleChange}
           />
         </div>
-      
         <label className="label">Genus</label>
         <div className="field">
           <input
@@ -57,7 +55,6 @@ const PlantForm = ({ formdata, handleSubmit, handleChange, handleImageUrl, butto
             onChange={handleChange}
           />
         </div>
-      
         <label className="label">Nursery Pot</label>
         <div className="field">
           <input
@@ -67,7 +64,6 @@ const PlantForm = ({ formdata, handleSubmit, handleChange, handleImageUrl, butto
             onChange={handleChange}
           />
         </div>
-    
         <label className="label">Origin</label>
         <div className="field">
           <input
@@ -86,8 +82,6 @@ const PlantForm = ({ formdata, handleSubmit, handleChange, handleImageUrl, butto
             onChange={handleChange}
           />
         </div>
-        
-
         <ImageUploadField
           value={formdata.image}
           name="image"

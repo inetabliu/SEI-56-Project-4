@@ -72,22 +72,17 @@ const Navigation = () => {
           </Nav>
           }
           {!userIsAuthenticated() ?
-         
             <Nav className="ms-auto">
               <LoginCanvas/>
               <RegisterCanvas/>
             </Nav>
-            
             :
             <Nav>
-              
               <Nav.Link variant="secondary"style={buttonStyle}href="/newplant">
                 <i className="fas fa-plus"></i> Plant
               </Nav.Link>
               <Button style={buttonStyle}onClick={handleLogout}>Log out</Button>
             </Nav>
-            
-    
           }
         </Navbar.Collapse>
       </Container>

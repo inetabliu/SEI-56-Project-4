@@ -11,7 +11,7 @@ const DeleteModal = ({ handleDelete }) => {
 
   return (
     <>
-      <Button style={{ textDecoration: 'underline' }}variant="success" onClick={handleShow}>
+      <Button style={{ textDecoration: 'underline' }} variant="success" onClick={handleShow}>
         Delete
       </Button>
       <Modal show={show} onHide={handleClose}>

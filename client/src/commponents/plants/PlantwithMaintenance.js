@@ -50,7 +50,6 @@ const PlantMaintenance = () => {
     background: '#FAD0C9',
     width: '50rem',
     borderRadius: '5%',
-
   }
 
   const mainCardStle = {
@@ -87,6 +86,7 @@ const PlantMaintenance = () => {
     marginTop: '5%',
     fontSize: '4rem',
   }
+  
   return (
     <Container style={cantStyle} className='d-flex'>
       <Card style={cardStyle} key={plant.plant_name}>
@@ -104,14 +104,12 @@ const PlantMaintenance = () => {
           <Button style={{ color: '#fff', marginRight: '5%' }} variant="success"><Link style={{ color: '#fff' }}to={`/plantedit/${plant.id}`}>Edit</Link></Button> 
           <DeleteModal handleDelete={handleDelete}/>
         </Card.Body>
-       
       </Card>
 
       <Card key={id}style={mainCardStle}>
         <Card.Body>
           <Card.Title>Maintenance Records</Card.Title>
           <Card.Text>
-        
             {maintenance.map(el => 
               <>
                 <p>{el.plant_name}</p>

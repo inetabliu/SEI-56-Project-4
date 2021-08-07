@@ -16,7 +16,7 @@ const LoginModal = () => {
       </Button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Would you liek to login?</Modal.Title>
+          <Modal.Title>Would you like to login?</Modal.Title>
         </Modal.Header>
         <Modal.Body>Are you sure you would like to delete this plant from your collection?</Modal.Body>
         <Modal.Footer>
