@@ -57,7 +57,7 @@ const Maintenance = () => {
 
   const formStyle = {
     width: '50%',
-    marginTop: '15%',
+    marginTop: '20%',
     textTransform: 'uppercase',
     textDecoration: 'underline',
     color: '#006B38',

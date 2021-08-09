@@ -40,7 +40,6 @@ const PlantEdit = ( { handleImageUrl }) => {
       const { data } = await axios.get(`/api/plants/${id}/`, {
         headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` },
       })
-      console.log(data)
       setFormData(data)
       
     }
@@ -49,9 +48,9 @@ const PlantEdit = ( { handleImageUrl }) => {
 
   const handleChange = (event) => {
     const updatedFormData = { ... formData, [event.target.name]: event.target.value }
-    const newErrors = { ...errors, formData, [event.target.name]: '' }
+    const newErrors = { ...errors, [event.target.name]: '' }
+    setErrors(newErrors)
     setFormData(updatedFormData)
-    console.log(formData)
   }
 
   const handleSubmit = async (event) => {
@@ -59,11 +58,11 @@ const PlantEdit = ( { handleImageUrl }) => {
     try {
       await axios.put(`/api/plants/${id}/`, formData, {
         headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` },
-      
       })
       history.push(`/maintenance/${id}`)
     } catch (err) {
-      console.log(err.response.data)
+      setErrors(err.response.data)
+      
     }
   }
 
@@ -76,7 +75,9 @@ const PlantEdit = ( { handleImageUrl }) => {
         buttonText="Submit changes"
         handleSubmit={handleSubmit}
         handleImageUrl={handleImageUrl}
-      
+        errors={errors}
+        titleText="Need to edit your plant?"
+        parText= "Edit your plant here"
       />
     </>
   )

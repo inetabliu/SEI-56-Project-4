@@ -31,7 +31,7 @@ export const ImageUploadField = ({ handleImageUrl, value }) => {
     <>
       {value ?
         <div>
-          <img height="auto"  width="400px" src={value} alt="image"/>
+          <img className="rounded float left"height="auto"  width="200px" src={value} alt="image"/>
         </div>
         :
         <>

@@ -5,7 +5,7 @@ import { useParams, useHistory, Link } from 'react-router-dom'
 import { Button, Container } from 'react-bootstrap'
 import { Modal, Card } from 'react-bootstrap'
 import DeleteModal from '../Popups/DeleteModal.js'
-import { getTokenFromLocalStorage, getPayload } from '../helpers/auth.js'
+import { getTokenFromLocalStorage } from '../helpers/auth.js'
 
 
 const PlantMaintenance = () => {

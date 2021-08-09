@@ -3,13 +3,14 @@ import { Button, Offcanvas } from 'react-bootstrap'
 import Register from '../auth/Register.js'
 
 
+
+
 const RegisterCanvas = () => {
-  const [show, setShow] = useState(false)
+  const [show, setRegisterShow] = useState(false)
 
-  const handleClose = () => setShow(false)
-  const handleShow = () => setShow(true)
+  const handleRegisterClose = () =>  setRegisterShow(false)
+  const handleRegisterShow = () => setRegisterShow(true)
 
-  
   const buttonStyle = {
     background: '#3F6844',
     borderColor: '#C4C4C4',
@@ -27,15 +28,15 @@ const RegisterCanvas = () => {
 
   return (
     <>
-      <Button style={buttonStyle} variant="primary" onClick={handleShow}>
+      <Button style={buttonStyle} variant="primary" onClick={handleRegisterShow}>
         Register
       </Button>
 
-      <Offcanvas style={canvasStyle} show={show} onHide={handleClose}>
+      <Offcanvas style={canvasStyle} show={show} onHide={handleRegisterClose} >
         <Offcanvas.Header closeButton>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <Register />
+          <Register/>
         </Offcanvas.Body>
       </Offcanvas>
     </>

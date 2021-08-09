@@ -40,6 +40,7 @@ const PlantCreateForm = () => {
     setFormdata({ ...formdata, [event.target.name]: value })
     console.log(event.target.value)
     const newErrors = setErrors({ ... errors, [event.target.name]: '' })
+    
     setErrors(newErrors)
     
   }
@@ -55,7 +56,7 @@ const PlantCreateForm = () => {
       )
       history.push('/allplants')
     } catch (err) {
-
+      setErrors(err.response.data)
       console.log(err.response.data)
     }
   }
@@ -68,17 +69,13 @@ const PlantCreateForm = () => {
   
   return (
     <>
-      <div style={{ marginTop: '5%' }} className="text-center">
-        <h1>Got another plant again?</h1>
-        <p>Add it to your collection</p>
-      </div>
       <PlantForm
-        
         formdata={formdata}
         handleChange={handleChange}
         handleImageUrl={handleImageUrl}
         handleSubmit={handleSubmit}
-        errors={errors}/>
+        errors={errors}
+      />
     </>
 
 

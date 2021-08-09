@@ -4,7 +4,7 @@
 Deployed with Heroku. Here is deployed version [The Plant Dispatch App](https://theplantdispatch.herokuapp.com/)
 
 # Overview
-Final solo project for General Assembly Software Engineering Bootcamp applying the knowledge from the last module learning basics of Django Framework and Python programming language. 
+Final solo project for General Assembly Software Engineering Bootcamp applying the knowledge from the last module learning basics of Django Framework and Python programming language, while combining the developing knowledge of Javascript.
 Timeframe - 9 days
 
 # Goal
@@ -22,17 +22,19 @@ Responsive first Web Application for cataloguing house plant collection and givi
 + Git/Github
 + FontAwesome
 + Figma
++ Cloudinary
 
 
 
 # Challenges
+
 
 # Wins
 
 # Key Learnings 
 
 # Future Improvements
-Plans in making this project an ongoing project for the future as a developer and being able to integrate automated functionality and ability to hook up plants to self watering Raspberry Pi system and record watering times automatically uploading it to the website.
+Further plan in making it an ongoing project for the future as a developer and being able to integrate automated functionality and ability to hook up plants to self watering Raspberry Pi system and record watering times automatically while uploading data to the website. 
 
 
 
