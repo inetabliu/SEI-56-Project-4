@@ -1,0 +1,306 @@
+[
+{
+  "model": "jwt_auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$Hu1e6H5347Px0gQllz1ESH$CV5vhLjVdKojJri6pLm2S04Rliq109wGumANXyPZCYM=",
+    "last_login": "2021-08-09T10:53:29.574Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2021-07-21T20:47:57.253Z",
+    "email": "ineta@email.com",
+    "full_name": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 33,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$LUweBwCTNlOVsAjW0xyMhK$5Z7UEhHBEQysBmaCdyGY/QVFp6L5Z1dT0zTrlDRpsnE=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Ineta",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-08-09T12:30:02.929Z",
+    "email": "ineta@email2.com",
+    "full_name": "Ineta Bliudziute",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 34,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$EC48hYhV8R6INLbBg2IUYa$RFaHxA+Hc/ZYR3dmDOW9KoxFwrXImAde7iNEKOJGgEk=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "potato",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-08-09T12:31:39.523Z",
+    "email": "potato@email.com",
+    "full_name": "potato",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 35,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$cyfxdZBAWyjLvSqoBlg4uv$31XoL2mvhPmXZLvp2SS7+HglKenoofDslT5E5w//T7M=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "InetaB",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-08-09T12:37:02.278Z",
+    "email": "aaim@email.com",
+    "full_name": "Ineta Bliudziute",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 36,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$0vq3n9c0Yqm5SQml0tHMDO$vW98v2MUjpQH4TMh2l/LPh/J2/G9QH6nYAXvqu9VRc8=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "InetaC",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-08-09T12:37:33.759Z",
+    "email": "aaim@email2.com",
+    "full_name": "Ineta Bliudziute",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 37,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$91cgEvrCdzlINmEgMkO1TL$lJoE4Up3PxyuCaOdRiD9hL4BYjl5aitZd0gYn6AvpC0=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "InetaG",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-08-09T12:38:56.724Z",
+    "email": "aaim@email3.com",
+    "full_name": "Ineta Bliudziute",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 38,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$RTCHE7FacdsglJiOpNyipi$FP22ou6eN7kDncCi2bAG38sOIdy396azm26N0NEjVok=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "inetab",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-08-09T14:22:44.067Z",
+    "email": "ineta@mail.co",
+    "full_name": "ineta bliu",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 39,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$IsEVHfqokN1UboHj0AdiNi$hFhypbl463B5aN/Og0UBGyX/BvM49LbSwmo0/22ADjo=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "inetabliu",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-08-09T14:42:20.691Z",
+    "email": "inetab@email.com",
+    "full_name": "Ineta Bliudziute",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 40,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$MtKjUhVlkaHlbSSffPMkQR$exJC8wy3T1EMiwcz8IZz2cqgTEkZ6c8/h8niC1qldL4=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "test",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-08-09T15:43:54.277Z",
+    "email": "test@email.com",
+    "full_name": "test",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 41,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$CG7bBzZT1FHnquKqoi173g$3TMzYFyF6b6G4n9fKOqP42KuC8CBk9mglxSdIEfwAyQ=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "test2",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-08-09T15:45:19.773Z",
+    "email": "test2@email.com",
+    "full_name": "test2",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 42,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$2p0FsU1gqQFCVC5AX1tcLp$2WimgPQJaBDBCWYT1Q5tywh4Lm/qMbTORZkAL19NSc8=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "test3",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-08-09T15:46:53.704Z",
+    "email": "test3@email.com",
+    "full_name": "test3",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 43,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$Wmf2wBayEQ3rlY9QTmGB3N$iFMtBwyd5QerVDivqd9krV1JzWHODaBs67n/EEqOuFs=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "test66",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-08-09T15:54:48.106Z",
+    "email": "test66@email.com",
+    "full_name": "test66",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 44,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$OzIpzV00h9rx8UzH4MI1M2$jJyY9KafkiSBmEoInXjcQ5loYNplI/wF/XvHyITPuK0=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "test10",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-08-09T15:59:41.144Z",
+    "email": "test10@email.co",
+    "full_name": "test10",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 45,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$I5xlMnDsEHQqxGIb50I7tk$PAJSlTXixUAttUiCMLE+Ova7s4Iywf0gLcID1FKtGes=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "inetabliud",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-08-09T16:02:23.387Z",
+    "email": "ineta.bliu@gmail.com",
+    "full_name": "Ineta Bliudziute",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 46,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$bxORahiRk0UMCgBVGaOtuD$TGj8sdjpxWN+ONyr5yv6ip0iCWEn0CQguxKMu8rN09M=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "inetabliudz",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-08-09T16:03:09.659Z",
+    "email": "ineta.bliuz@gmail.com",
+    "full_name": "Ineta Bliudziute",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 47,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$RSRLnV79dJu91i3sjO25PC$F0WhoYOWfk+e7FX7zr2RDtwN8DBC7ywmfSsMSbkiRIg=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "grybzt@gmail.com",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-08-09T20:11:01.086Z",
+    "email": "grybzt@gmail.com",
+    "full_name": "Ineta Bliudziute",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
