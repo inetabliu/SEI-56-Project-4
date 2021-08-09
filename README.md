@@ -3,14 +3,14 @@
 ## Plant care & catalogueing app
 Deployed with Heroku. Here is deployed version [The Plant Dispatch App](https://theplantdispatch.herokuapp.com/)
 
-#Overview
+# Overview
 Final solo project for General Assembly Software Engineering Bootcamp applying the knowledge from the last module learning basics of Django Framework and Python programming language. 
 Timeframe - 9 days
 
-#Goal
+# Goal
 Responsive first Web Application for cataloguing house plant collection and giving ability to record *watering*, *fertilization*, *repotting* as well as *pest issues*. Simple CRUD application to track plant maintenance, information about specimens as well as ability to upload images of individual plants to be able to refer to the catalogue more easily.
 
-#Technologies used 
+# Technologies used 
 + Django
 + Rest_Framework
 + Python
@@ -25,13 +25,13 @@ Responsive first Web Application for cataloguing house plant collection and givi
 
 
 
-#Challenges
+# Challenges
 
-#Wins
+# Wins
 
-#Key Learnings 
+# Key Learnings 
 
-Future Improvements
+# Future Improvements
 Plans in making this project an ongoing project for the future as a developer and being able to integrate automated functionality and ability to hook up plants to self watering Raspberry Pi system and record watering times automatically uploading it to the website.
 
 
