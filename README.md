@@ -12,9 +12,6 @@ Responsive first Web Application for cataloguing house plant collection and givi
 
 Timeframe - 9 days
 
-# Goal
-Simple mobile friendly CRUD application to catalogue users plant collection and maintenance. Main purpose of the application is to allow user to create a plant record, edit a plant or delete it, as well as record different maintenance tasks and display it on plant show page. As a logged in user you would be able to view only your own plant collection. Due to it being a solo project and me working with Python programming lannguage for the first time, I wanted to keep the application extremely simple and execute basic functionally before working on different features. 
-
 # Technologies used 
 + Django
 + Rest_Framework
@@ -28,6 +25,59 @@ Simple mobile friendly CRUD application to catalogue users plant collection and 
 + FontAwesome
 + Figma
 + Cloudinary
+
+# Developement process
+
+## Preliminary work
+As it has been first time I was building a full stack application all by myself with a limited deadline, I wanted to keep things pretty simple so I can comforably reach the MVP and leave plenty time to finese different features and leave time for the styling. 
+
+I've decided to invest a full day worth of planing user stories before jumping into writing code, so I have created a Trello board that documented it for me. I have split the user stories in different labels that would allow me to work through the project systematically see example of Trello board and labels bellow. 
+
+![Screenshot 2021-08-10 at 17 35 21](https://user-images.githubusercontent.com/81913593/128898562-4c9571ff-2b7b-4651-921a-8314a8e81488.png)
+![TrelloExample](https://user-images.githubusercontent.com/81913593/128899012-ac550af6-c90a-47a9-93df-60aff9f626f1.png)
+>User stories definitelly have helped to organise the workflow and keep me on track throughout the project as well as deciding to building feature by feature working on the backend & fronted fucntionality at the same time.
+
+### Using Cloudinary API
+Since using Cloudinary has been extremely satisfying in my previous group project, I have decided to familiarise myself with it more using Cloudinary API to make post request and store my images on there. I've made sure I've tested it out first before starting to build my application in case I wasn't satisfied with the result or couldn't include image upload feature in the way I wanted to. It was a success and I was able to start building my first solo full stack app.
+
+
+```javascript
+//Function that handles image upload to cloudinary
+export const ImageUploadField = ({ handleImageUrl, value }) => {
+  
+  const handleUpload = async event => {
+    const data = new FormData()
+    data.append('file', event.target.files[0])
+    data.append('upload_preset', uploadPreset)
+    const res = await axios.post(uploadUrl, data)
+    handleImageUrl(res.data.url)
+    console.log(res.data.url)
+  }
+```
+
+### Models
+
+Model relationship initial diagram
+
+![ModelDiagram](https://res.cloudinary.com/inetab/image/upload/c_scale,w_600/v1628614750/SEI_Project_4/Readme/ego2dl0czzstuathwxqp.png)
+
+Simple user Model
+
+![UserModel](https://res.cloudinary.com/inetab/image/upload/c_scale,w_600/v1628614773/SEI_Project_4/Readme/hkxogz4mgj1k0osypivp.png)
+
+Maintenance Model with one to many relationship with plant model 
+
+![MaintenanceModel](https://res.cloudinary.com/inetab/image/upload/c_scale,w_600/v1628614743/SEI_Project_4/Readme/edvnf1jwlnd51pc0zbx5.png)
+
+Plant Model with One to Many relationship with user that added the plant
+
+![PlantModel](https://res.cloudinary.com/inetab/image/upload/c_scale,w_600/v1628614756/SEI_Project_4/Readme/ev79lqbmf08r37qew4mu.png)
+
+
+
+
+
+
 
 # Challenges
   <h3 align="center">Consistent error handling thrughout the site</h3>
