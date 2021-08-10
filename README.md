@@ -39,9 +39,11 @@ Simple mobile friendly CRUD application to catalogue users plant collection and 
 > I have decided to try something different and complete all of my styling either using Bootstrap or creating styling variables inside my components rather than using CSS or SASS throughout the project. It has caused a fair amount of repeating variables thuought my commonents and I ould have definitely exported them out creating an exportable variables file from which I would be able to use them thoughout my site.
 
   <h3 align="center">User authentication that would allow only to view, edit, delete plants only by the owner of the plant.</h3>
+  
  > Authentication is definitely something that I find extremely satisfying as well as challening to code. Having have spent only 10 days 
 
  <h3 align="center">State management in different React components</h3>
+ 
  > Something that I found particularly difficult and had to do a lot of reading on is lifting state from one component to another, which was something I tried to implement in my Login & Register Offcanvas components, which has proven to be a hard task without Redux, so definetly looking forward getting this challenge completed.
 
 # Wins
