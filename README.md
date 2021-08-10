@@ -1,7 +1,7 @@
 # SEI-56-Project-4
 # The Plant Dispatch
 ## Plant care & catalogueing app
- [Plant Dispatch Mobile Walkthrough](plantdispatchmobile.gif)
+
 Deployed with Heroku. Here is deployed version [The Plant Dispatch App](https://theplantdispatch.herokuapp.com/)
 
 # Overview
