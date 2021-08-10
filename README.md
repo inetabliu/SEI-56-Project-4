@@ -1,7 +1,7 @@
 # SEI-56-Project-4
 # The Plant Dispatch
 ## Plant care & catalogueing app
-<p align="center" >
+<p align="left" >
  <img width="50%" src="https://res.cloudinary.com/inetab/image/upload/v1628592082/SEI_Project_4/fgxhttoqfovt7azjpndq.gif" alt="mobile-walkthrough"/>
 </p>
 
