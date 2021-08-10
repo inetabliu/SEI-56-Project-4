@@ -1,3 +1,4 @@
+# README IN PROGRESS... ![50%](https://progress-bar.dev/45) 
 
 # The Plant Dispatch <h3>Plant care & cataloguing app</h3>
 Final solo project for General Assembly Software Engineering Bootcamp applying the knowledge from the last module learning basics of Django Framework and Python programming language, while continuing to adapt the  knowledge of Javascript. As a plant owner I wanted to create an application that would allow users to catalogue their plant collection while adding some amount of functionality in being able to record different plant maintenance tasks. The name and design of the project has been strongly influenced by Wes Anderson color schemes as well as the name of the project, being a tribute to the new movie The French Dispatch.
@@ -5,7 +6,7 @@ Final solo project for General Assembly Software Engineering Bootcamp applying t
   <img src="https://res.cloudinary.com/inetab/image/upload/v1628593336/SEI_Project_4/wor1q5qk78ru0rrqvuih.png" alt="homepage"/>
  <p align="center">The French Dispatch inspiration</p>
   <img src="https://i.guim.co.uk/img/media/e57a3a90158709f50904467f33c2b427be1b0e1e/0_275_2995_1797/master/2995.jpg?width=620&quality=45&auto=format&fit=max&dpr=2&s=1cf8103b720979c1e3e5a131e0ea8921"/>
-  Deployed with Heroku. Here is deployed version The Plant Dispatch App >>> https://theplantdispatch.herokuapp.com/
+  Deployed with Heroku. https://theplantdispatch.herokuapp.com/
  
 # Overview
 Responsive first Web Application for cataloguing house plant collection and giving ability to record *watering*, *fertilization*, *repotting* as well as *pest issues*. Simple CRUD application to track plant maintenance, information about specimens as well as ability to upload images of individual plants to be able to refer to the catalogue more easily.
@@ -55,13 +56,16 @@ export const ImageUploadField = ({ handleImageUrl, value }) => {
   }
 ```
 
+### Creating First Django Project
+
+
 ### Models
 
 Model relationship initial diagram
 
 ![ModelDiagram](https://res.cloudinary.com/inetab/image/upload/c_scale,w_600/v1628614750/SEI_Project_4/Readme/ego2dl0czzstuathwxqp.png)
 
-Simple user Model
+User Model
 
 ![UserModel](https://res.cloudinary.com/inetab/image/upload/c_scale,w_600/v1628614773/SEI_Project_4/Readme/hkxogz4mgj1k0osypivp.png)
 
