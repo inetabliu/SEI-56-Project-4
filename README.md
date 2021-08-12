@@ -8,8 +8,11 @@ Final solo project for General Assembly Software Engineering Bootcamp applying t
  <p align="center">The French Dispatch inspiration</p>
   <img src="https://i.guim.co.uk/img/media/e57a3a90158709f50904467f33c2b427be1b0e1e/0_275_2995_1797/master/2995.jpg?width=620&quality=45&auto=format&fit=max&dpr=2&s=1cf8103b720979c1e3e5a131e0ea8921"/>
   Deployed with Heroku here https://theplantdispatch.herokuapp.com/
+  
   Create an account or use these details to test out the site:
+  
   email: ineta.bliu@email.com
+  
   password: pass
   
   
@@ -20,6 +23,8 @@ Final solo project for General Assembly Software Engineering Bootcamp applying t
 Responsive first Web Application for cataloguing house plant collection and giving ability to record *watering*, *fertilization*, *repotting* as well as *pest issues*. Simple CRUD application to track plant maintenance, information about specimens as well as ability to upload images of individual plants to be able to refer to the catalogue more easily.
 
 Timeframe - 9 days
+
+https://user-images.githubusercontent.com/81913593/128855399-1741801b-e31c-4cab-b542-e4725cecf457.mp4
 
 # Technologies used 
 + Django
@@ -35,9 +40,22 @@ Timeframe - 9 days
 + Figma
 + Cloudinary
 
+
+## Installation
++ Clone or download the repo
++ ``pipenv`` to install Python packages
++ ``python manage.py loaddata jwt_auth/seeds.json`` to load user from the database
++ ``python manage.py loaddata plants/seeds.json`` to load plants from the database
++ ``cd client`` to go to the frontend directory
++ ``yarn install`` to install frontend dependencies
++  run ``yarn build``
++ go back to main directory and run ``python manage.py runserver`` to start the app
+
+
+
 # Development process
 
-## Preliminary work
+### Preliminary work
 As it has been the first time I was building a full stack application all by myself with a limited deadline, I wanted to keep things pretty simple so I can comfortably reach the MVP and leave plenty of time to finesse different features and leave time for the styling. 
 
 I've decided to invest a full day's worth of planning user stories before jumping into writing code, so I have created a Trello board that documented it for me. I have split the user stories in different labels that would allow me to work through the project systematically, see example of Trello board and labels below. 
@@ -64,27 +82,11 @@ export const ImageUploadField = ({ handleImageUrl, value }) => {
   }
 ```
 
-### Creating First Django Project
-After completing my user stories I have decided to build my application by feature building on backend as well as frontend. 
-
-
 ### Models
+![ModelDiagram](https://user-images.githubusercontent.com/81913593/129183562-1ed31376-9edd-4d44-b6c3-d16853b81d5c.png)
 
-Model relationship initial diagram
 
-![ModelDiagram](https://res.cloudinary.com/inetab/image/upload/c_scale,w_600/v1628614750/SEI_Project_4/Readme/ego2dl0czzstuathwxqp.png)
 
-User Model
-
-![UserModel](https://res.cloudinary.com/inetab/image/upload/c_scale,w_600/v1628614773/SEI_Project_4/Readme/hkxogz4mgj1k0osypivp.png)
-
-Maintenance Model with one to many relationship with plant model 
-
-![MaintenanceModel](https://res.cloudinary.com/inetab/image/upload/c_scale,w_600/v1628614743/SEI_Project_4/Readme/edvnf1jwlnd51pc0zbx5.png)
-
-Plant Model with One to Many relationship with user that added the plant
-
-![PlantModel](https://res.cloudinary.com/inetab/image/upload/c_scale,w_600/v1628614756/SEI_Project_4/Readme/ev79lqbmf08r37qew4mu.png)
 
 
 
@@ -103,13 +105,16 @@ Plant Model with One to Many relationship with user that added the plant
 
   <h3 align="center">User authentication that would allow only to view, edit, delete plants only by the owner of the plant.</h3>
   
- > Authentication is definitely something that I find extremely satisfying as well as challenging to code. Having have spent only 10 days 
+ > Authentication is definitely something that I find extremely satisfying as well as challenging to code. Having have spent only 10 days learning Django Framework and just the basic fundamentals of Python, I wasn't able to focus on authentication as much as I wanted to.
 
  <h3 align="center">State management in different React components</h3>
  
  > Something that I found particularly difficult and had to do a lot of reading on is lifting state from one component to another, which was something I tried to implement in my Login & Register Offcanvas components, which has proven to be a hard task without Redux, so definitely looking forward getting this challenge completed.
 
 # Wins
++ Reaching my MVP earlier than I personally anticipated and spending the time to focus on reviewing each feature and making sure everything is working as intended. Having had written great user stories at the begining of the project has proven to be extremely useful in keeping me on track with the whole developement process and continue working through the changes in a systematic way has been a great win.
++ Ability to integrate Cloudinary API to my application in storing user uploaded images has been extremely satisfying.
++ Considerably smooth development process compared to my previous projects for GA. I have improved my problem solving skills in all aspects of the developement process which helped me to maintain a clean and well strctured codebase for my project.
 
 # Key Learnings
 + Working with relational database for the first time while using Django and Python on the backend, has definitely improved my confidence building the backend of 
@@ -119,11 +124,7 @@ Plant Model with One to Many relationship with user that added the plant
 + Ability to upload multiple images of a plant, as well as edit currently uploaded images.
 + Make the application even more mobile friendly, especially on the plant show page.
 + Add ability for different users to view each other's plant collection, trade plant cutting as well as have statistics for users favourite plant genera.
-
-
-# Mobile walkthrough
-
-https://user-images.githubusercontent.com/81913593/128855399-1741801b-e31c-4cab-b542-e4725cecf457.mp4
++ Implement login using Magic Link (something I really enjoy as a user myself and would love my application to have it)
 
 
 
