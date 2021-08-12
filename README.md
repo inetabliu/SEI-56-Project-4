@@ -1,6 +1,6 @@
 # README IN PROGRESS... ![90%](https://progress-bar.dev/80) 
 
- #The Plant Dispatch <h3>Plant care & cataloguing app</h3>
+ # The Plant Dispatch <h3>Plant care & cataloguing app</h3>
 
 Final solo project for General Assembly Software Engineering Bootcamp applying the knowledge from the last module learning basics of Django Framework and Python programming language, while continuing to adapt the  knowledge of Javascript. As a plant owner I wanted to create an application that would allow users to catalogue their plant collection while adding some amount of functionality in being able to record different plant maintenance tasks. The name and design of the project has been strongly influenced by Wes Anderson color schemes as well as the name of the project, being a tribute to the new movie The French Dispatch.
  
