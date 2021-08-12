@@ -1,4 +1,4 @@
-# README IN PROGRESS... ![50%](https://progress-bar.dev/45) 
+# README IN PROGRESS... ![80%](https://progress-bar.dev/80) 
 
 # The Plant Dispatch <h3>Plant care & cataloguing app</h3>
 
