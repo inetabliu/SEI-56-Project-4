@@ -1,6 +1,6 @@
-# README IN PROGRESS... ![80%](https://progress-bar.dev/80) 
+# README IN PROGRESS... ![90%](https://progress-bar.dev/80) 
 
-# The Plant Dispatch <h3>Plant care & cataloguing app</h3>
+ #The Plant Dispatch <h3>Plant care & cataloguing app</h3>
 
 Final solo project for General Assembly Software Engineering Bootcamp applying the knowledge from the last module learning basics of Django Framework and Python programming language, while continuing to adapt the  knowledge of Javascript. As a plant owner I wanted to create an application that would allow users to catalogue their plant collection while adding some amount of functionality in being able to record different plant maintenance tasks. The name and design of the project has been strongly influenced by Wes Anderson color schemes as well as the name of the project, being a tribute to the new movie The French Dispatch.
  
@@ -105,25 +105,26 @@ export const ImageUploadField = ({ handleImageUrl, value }) => {
 
   <h3 align="center">User authentication that would allow only to view, edit, delete plants only by the owner of the plant.</h3>
   
- > Authentication is definitely something that I find extremely satisfying as well as challenging to code. Having have spent only 10 days learning Django Framework and just the basic fundamentals of Python, I wasn't able to focus on authentication as much as I wanted to.
+ > Authentication is definitely something that I find extremely satisfying as well as challenging to code. Having spent only 10 days learning Django Framework and just the basic fundamentals of Python, I wasn't able to focus on authentication as much as I wanted to.
 
  <h3 align="center">State management in different React components</h3>
  
  > Something that I found particularly difficult and had to do a lot of reading on is lifting state from one component to another, which was something I tried to implement in my Login & Register Offcanvas components, which has proven to be a hard task without Redux, so definitely looking forward getting this challenge completed.
 
 # Wins
-+ Reaching my MVP earlier than I personally anticipated and spending the time to focus on reviewing each feature and making sure everything is working as intended. Having had written great user stories at the begining of the project has proven to be extremely useful in keeping me on track with the whole developement process and continue working through the changes in a systematic way has been a great win.
++ Reaching my MVP earlier than I personally anticipated and spending the time to focus on reviewing each feature and making sure everything is working as intended. Having had written great user stories at the beginning of the project has proven to be extremely useful in keeping me on track with the whole development process and continuing working through the changes while leveraging Git fully been a great win.
 + Ability to integrate Cloudinary API to my application in storing user uploaded images has been extremely satisfying.
-+ Considerably smooth development process compared to my previous projects for GA. I have improved my problem solving skills in all aspects of the developement process which helped me to maintain a clean and well strctured codebase for my project.
++ Considerably smooth development process compared to my previous projects for GA. I have improved my problem solving skills in all aspects of the development process which helped me to maintain a clean and well structured code-base for my project.
 
 # Key Learnings
-+ MySQL and relational databases. Working with relational database for the first time while using Django and Python on the backend, has definitely improved my confidence building the backend of my application. Being able adapt the Javascript fundamentals I've learned in previous modules and adapt my knowledge in learning Python. 
++ PostgreSQL and relational databases. Working with relational databases for the first time while using Django and Python on the backend, has definitely improved my confidence building the backend of my application. Being able adapt the Javascript fundamentals I've learned in previous modules and adapt my knowledge in learning Python. 
++ Object oriented programming. I was exposed to it for the first time and looking forward learning more about in my future projects.
 
 # Future Improvements
 + Further plan in making it an ongoing project for the future as a developer and being able to integrate automated functionality and ability to hook up plants to self watering Raspberry Pi system and record watering times automatically while uploading data to the website. 
 + Ability to upload multiple images of a plant, as well as edit currently uploaded images.
 + Make the application even more mobile friendly, especially on the plant show page.
-+ Add ability for different users to view each other's plant collection, trade plant cutting as well as have statistics for users favourite plant genera.
++ Add ability for different users to view each other's plant collection, trade plant cutting as well as have statistics for users' favourite plant genera.
 + Implement login using Magic Link (something I really enjoy as a user myself and would love my application to have it)
 
 
