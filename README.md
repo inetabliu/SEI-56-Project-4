@@ -117,7 +117,7 @@ export const ImageUploadField = ({ handleImageUrl, value }) => {
 + Considerably smooth development process compared to my previous projects for GA. I have improved my problem solving skills in all aspects of the developement process which helped me to maintain a clean and well strctured codebase for my project.
 
 # Key Learnings
-+ Working with relational database for the first time while using Django and Python on the backend, has definitely improved my confidence building the backend of 
++ MySQL and relational databases. Working with relational database for the first time while using Django and Python on the backend, has definitely improved my confidence building the backend of my application. Being able adapt the Javascript fundamentals I've learned in previous modules and adapt my knowledge in learning Python. 
 
 # Future Improvements
 + Further plan in making it an ongoing project for the future as a developer and being able to integrate automated functionality and ability to hook up plants to self watering Raspberry Pi system and record watering times automatically while uploading data to the website. 
