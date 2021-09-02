@@ -1,8 +1,8 @@
 # README IN PROGRESS... ![90%](https://progress-bar.dev/80) 
 
  # The Plant Dispatch <h3>Plant care & cataloguing app</h3>
-
-Final solo project for General Assembly Software Engineering Bootcamp applying the knowledge from the last module learning basics of Django Framework and Python programming language, while continuing to adapt the  knowledge of Javascript. As a plant owner I wanted to create an application that would allow users to catalogue their plant collection while adding some amount of functionality in being able to record different plant maintenance tasks. The name and design of the project has been strongly influenced by Wes Anderson color schemes as well as the name of the project, being a tribute to the new movie The French Dispatch.
+ 
+This was the final solo project for the General Assembly Software Engineering Bootcamp, applying the knowledge gained from the final module ‘learning basics of Django Framework and Python programming language’, while continuing to apply knowledge of Javascript. As a plant owner, I wanted to create an application that would allow users to catalogue their plant collection, while adding functionality to be able to record different plant maintenance tasks. The name and design of the project has been strongly influenced by film director Wes Anderson style color schemes, as well as the name of the project, being a tribute to the new movie The French Dispatch.
  
   <img src="https://res.cloudinary.com/inetab/image/upload/v1628593336/SEI_Project_4/wor1q5qk78ru0rrqvuih.png" alt="homepage"/>
  <p align="center">The French Dispatch inspiration</p>
@@ -15,14 +15,13 @@ Final solo project for General Assembly Software Engineering Bootcamp applying t
   
   password: pass
   
-  
-
-  
- 
 # Overview
 Responsive first Web Application for cataloguing house plant collection and giving ability to record *watering*, *fertilization*, *repotting* as well as *pest issues*. Simple CRUD application to track plant maintenance, information about specimens as well as ability to upload images of individual plants to be able to refer to the catalogue more easily.
 
 Timeframe - 9 days
+
+# Brief
+Create a full-stack app using Python, Django and a PostgreSQL database. 
 
 https://user-images.githubusercontent.com/81913593/128855399-1741801b-e31c-4cab-b542-e4725cecf457.mp4
 
